@@ -1,0 +1,202 @@
+fileFormatVersion: 2
+guid: f6347543920f1394387da29c48cf6c6e
+timeCreated: 1426548288
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: EyeBrow
+    21300002: Head
+    21300004: Eye
+    21300006: Body
+    21300008: Led_Upper
+    21300010: Arm_Upper_R
+    21300012: Arm_Upper_L
+    21300014: Leg_Lower
+    21300016: Underwere
+    21300018: Arm_Lower_R
+    21300020: Arm_Lower_L
+    21300022: Foot
+    21300024: Hand
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: EyeBrow
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 395
+        width: 62
+        height: 35
+      alignment: 9
+      pivot: {x: .72119534, y: .491663456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Head
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 304
+        width: 129
+        height: 142
+      alignment: 9
+      pivot: {x: .199861035, y: .416104376}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Eye
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 309
+        width: 33
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Body
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 197
+        width: 134
+        height: 147
+      alignment: 9
+      pivot: {x: .30552128, y: .125179574}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Led_Upper
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 163
+        width: 30
+        height: 97
+      alignment: 9
+      pivot: {x: .499999493, y: .87612617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Arm_Upper_R
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 187
+        width: 35
+        height: 108
+      alignment: 9
+      pivot: {x: .408295542, y: .902561605}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Arm_Upper_L
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 191
+        width: 32
+        height: 101
+      alignment: 9
+      pivot: {x: .417934418, y: .884237766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Leg_Lower
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 67
+        width: 20
+        height: 65
+      alignment: 9
+      pivot: {x: .796319604, y: .915476024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Underwere
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 122
+        width: 59
+        height: 45
+      alignment: 9
+      pivot: {x: .474759638, y: .764738321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Arm_Lower_R
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 102
+        width: 22
+        height: 65
+      alignment: 9
+      pivot: {x: .354105175, y: .899527192}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Arm_Lower_L
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 109
+        width: 28
+        height: 65
+      alignment: 9
+      pivot: {x: .301999778, y: .917483747}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Foot
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 15
+        width: 125
+        height: 65
+      alignment: 9
+      pivot: {x: .166430116, y: .534364939}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hand
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 8
+        width: 51
+        height: 78
+      alignment: 9
+      pivot: {x: .534328103, y: .926461756}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

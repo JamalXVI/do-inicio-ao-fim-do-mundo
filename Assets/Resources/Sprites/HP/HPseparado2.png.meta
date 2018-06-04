@@ -1,0 +1,191 @@
+fileFormatVersion: 2
+guid: 2d8e434c1b3fea84ca96650d489cb2ef
+timeCreated: 1429907725
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: HPArm_Up
+    21300002: HPArmDown_R
+    21300004: HPArm_Down_L
+    21300006: HPLeg_Up
+    21300008: HPEyes
+    21300010: HPEyeBrow
+    21300012: HPLeg_Down
+    21300014: HPFoot
+    21300016: HPSkirt
+    21300018: HPBody
+    21300020: HPHead
+    21300022: HPModel
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: HPArm_Up
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 849
+        width: 168
+        height: 340
+      alignment: 9
+      pivot: {x: .741383135, y: .869310081}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPArmDown_R
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 487
+        width: 202
+        height: 346
+      alignment: 9
+      pivot: {x: .286699206, y: .910210907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPArm_Down_L
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 565
+        width: 199
+        height: 324
+      alignment: 9
+      pivot: {x: .258011103, y: .906774282}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPLeg_Up
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 666
+        width: 184
+        height: 391
+      alignment: 9
+      pivot: {x: .458676875, y: .850035667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPEyes
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 1187
+        width: 216
+        height: 108
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPEyeBrow
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 1303
+        width: 74
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPLeg_Down
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 228
+        width: 134
+        height: 180
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPFoot
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 319
+        width: 205
+        height: 133
+      alignment: 9
+      pivot: {x: .326911449, y: .652451813}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPSkirt
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 42
+        width: 388
+        height: 200
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPBody
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 257
+        width: 409
+        height: 613
+      alignment: 9
+      pivot: {x: .493803054, y: .1361541}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPHead
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 875
+        width: 542
+        height: 666
+      alignment: 9
+      pivot: {x: .392447144, y: .343971223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPModel
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 25
+        width: 575
+        height: 1492
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

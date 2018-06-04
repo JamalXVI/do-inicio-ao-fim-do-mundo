@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: 93bea07934992e448b4fcbe12401c290
+timeCreated: 1440031876
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: macaco_Head
+    21300002: macaco_Eye
+    21300004: macaco_Eyebrow
+    21300006: macaco_Mounth
+    21300008: macaco_Arm_Up
+    21300010: macaco_Arm_Down
+    21300012: macaco_Leg_Up
+    21300014: macaco_Leg_Down
+    21300016: macaco_Body
+    21300018: macaco_Tail
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: macaco_Head
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 703
+        width: 242
+        height: 211
+      alignment: 9
+      pivot: {x: .55879122, y: .213427499}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: macaco_Eye
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 971
+        width: 114
+        height: 65
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: macaco_Eyebrow
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 1004
+        width: 37
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: macaco_Mounth
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 984
+        width: 79
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: macaco_Arm_Up
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 705
+        width: 127
+        height: 211
+      alignment: 9
+      pivot: {x: .61202693, y: .828715384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: macaco_Arm_Down
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 713
+        width: 91
+        height: 198
+      alignment: 9
+      pivot: {x: .51954335, y: .841315687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: macaco_Leg_Up
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 745
+        width: 99
+        height: 136
+      alignment: 9
+      pivot: {x: .66167599, y: .761534274}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: macaco_Leg_Down
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 630
+        width: 90
+        height: 87
+      alignment: 9
+      pivot: {x: .262875706, y: .704417944}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: macaco_Body
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 381
+        width: 321
+        height: 226
+      alignment: 9
+      pivot: {x: .837957919, y: .279662937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: macaco_Tail
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 64
+        width: 149
+        height: 268
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

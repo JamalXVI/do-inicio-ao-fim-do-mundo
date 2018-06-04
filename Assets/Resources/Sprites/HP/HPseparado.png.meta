@@ -1,0 +1,176 @@
+fileFormatVersion: 2
+guid: 3f778adc613810541bebcf669ccc9be2
+timeCreated: 1429832394
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: HPLeg_up
+    21300002: HPEyeBrow
+    21300004: HPHead
+    21300006: HPEyes
+    21300008: HPSkirt
+    21300010: HPArm_Up
+    21300012: HPArm_Down
+    21300014: HPBody
+    21300016: HPseparado_10
+    21300018: HPLeg_Down
+    21300020: HPseparado_12
+    21300022: HPFoot
+    21300024: HPseparado_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    textureFormat: -1
+    compressionQuality: 50
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: HPLeg_up
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1222
+        width: 154
+        height: 275
+      alignment: 9
+      pivot: {x: .467084616, y: .859440684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPEyeBrow
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 1419
+        width: 74
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPHead
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 845
+        width: 539
+        height: 652
+      alignment: 9
+      pivot: {x: .440719336, y: .297581017}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPEyes
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 1217
+        width: 213
+        height: 117
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPSkirt
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 952
+        width: 369
+        height: 183
+      alignment: 9
+      pivot: {x: .496235341, y: .887162983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPArm_Up
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 593
+        width: 148
+        height: 311
+      alignment: 9
+      pivot: {x: .855252266, y: .953304768}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPArm_Down
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 564
+        width: 123
+        height: 327
+      alignment: 9
+      pivot: {x: .664542854, y: .92838335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPBody
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 114
+        width: 401
+        height: 560
+      alignment: 9
+      pivot: {x: .610305011, y: .200165808}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPLeg_Down
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 385
+        width: 134
+        height: 180
+      alignment: 9
+      pivot: {x: .85234046, y: .881708801}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HPFoot
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 266
+        width: 243
+        height: 100
+      alignment: 9
+      pivot: {x: .0887868106, y: .814928293}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

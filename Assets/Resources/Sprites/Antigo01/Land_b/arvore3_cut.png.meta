@@ -1,0 +1,125 @@
+fileFormatVersion: 2
+guid: 2c372987c8051914481bcf1deb9c7a1d
+timeCreated: 1441148823
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: arvore3_LUp
+    21300002: arvore3_LDown
+    21300004: arvore3_RUp
+    21300006: arvore3_RDown
+    21300008: arvore3_LFull
+    21300010: arvore3_RFull
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: arvore3_LUp
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1890
+        width: 840
+        height: 1488
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arvore3_LDown
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 33
+        width: 425
+        height: 1533
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arvore3_RUp
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 1888
+        width: 841
+        height: 1490
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arvore3_RDown
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 33
+        width: 427
+        height: 1524
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arvore3_LFull
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 298
+        width: 841
+        height: 2817
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arvore3_RFull
+      rect:
+        serializedVersion: 2
+        x: 2942
+        y: 298
+        width: 841
+        height: 2817
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,146 @@
+fileFormatVersion: 2
+guid: e8f350702487e754cbb6cf4e69138854
+timeCreated: 1454617500
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: O Spin
+    21300002: O Engin
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: O Spin
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 1547
+        width: 430
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 126.16876, y: -8.348389}
+        - {x: 126.16876, y: 39.65161}
+        - {x: 120.16876, y: 59.65161}
+        - {x: 95.16876, y: 96.65161}
+        - {x: 66.16876, y: 118.65161}
+        - {x: 27.168762, y: 131.65161}
+        - {x: -38.831238, y: 131.65161}
+        - {x: -58.831238, y: 125.65161}
+        - {x: -92.83124, y: 105.65161}
+        - {x: -111.83124, y: 79.65161}
+        - {x: -124.83124, y: 42.65161}
+        - {x: -124.83124, y: 7.6516113}
+        - {x: -119.83124, y: -7.3483887}
+        - {x: -125.83124, y: -32.34839}
+        - {x: -125.83124, y: -63.34839}
+        - {x: -92.83124, y: -113.34839}
+        - {x: -52.831238, y: -131.34839}
+        - {x: 25.168762, y: -131.34839}
+        - {x: 74.16876, y: -104.34839}
+        - {x: 103.16876, y: -69.34839}
+        - {x: 116.16876, y: -41.34839}
+    - name: O Engin
+      rect:
+        serializedVersion: 2
+        x: 2068
+        y: 701
+        width: 649
+        height: 631
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 138.3158, y: -136.2503}
+        - {x: 159.3158, y: -108.250305}
+        - {x: 159.3158, y: -86.250305}
+        - {x: 179.3158, y: -65.250305}
+        - {x: 190.3158, y: -42.250305}
+        - {x: 190.3158, y: -3.2503052}
+        - {x: 168.3158, y: 13.749695}
+        - {x: 190.3158, y: 36.749695}
+        - {x: 190.3158, y: 48.749695}
+        - {x: 186.3158, y: 69.749695}
+        - {x: 168.3158, y: 90.749695}
+        - {x: 155.3158, y: 119.749695}
+        - {x: 118.315796, y: 164.7497}
+        - {x: 72.315796, y: 160.7497}
+        - {x: 60.315796, y: 184.7497}
+        - {x: 8.315796, y: 184.7497}
+        - {x: -14.684204, y: 162.7497}
+        - {x: -27.684204, y: 183.7497}
+        - {x: -78.684204, y: 177.7497}
+        - {x: -85.684204, y: 160.7497}
+        - {x: -89.684204, y: 141.7497}
+        - {x: -134.6842, y: 133.7497}
+        - {x: -149.6842, y: 117.749695}
+        - {x: -161.6842, y: 99.749695}
+        - {x: -148.6842, y: 69.749695}
+        - {x: -178.6842, y: 57.749695}
+        - {x: -187.6842, y: 51.749695}
+        - {x: -189.6842, y: 35.749695}
+        - {x: -189.6842, y: 4.749695}
+        - {x: -184.6842, y: 0.7496948}
+        - {x: -189.6842, y: -24.250305}
+        - {x: -189.6842, y: -46.250305}
+        - {x: -183.6842, y: -84.250305}
+        - {x: -166.6842, y: -88.250305}
+        - {x: -157.6842, y: -89.250305}
+        - {x: -147.6842, y: -139.2503}
+        - {x: -94.684204, y: -166.2503}
+        - {x: -73.684204, y: -148.2503}
+        - {x: -64.684204, y: -182.2503}
+        - {x: -50.684204, y: -184.2503}
+        - {x: 33.315796, y: -184.2503}
+        - {x: 39.315796, y: -183.2503}
+        - {x: 81.315796, y: -177.2503}
+        - {x: 103.315796, y: -139.2503}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

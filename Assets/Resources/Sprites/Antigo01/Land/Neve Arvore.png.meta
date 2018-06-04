@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: 02cf410c899f6bc4c8a4bb30e836034f
+timeCreated: 1430349995
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: neve7
+    21300002: neve5
+    21300004: neve4
+    21300006: neve8
+    21300008: neve9
+    21300010: neve2
+    21300012: neve3
+    21300014: neve0
+    21300016: neve1
+    21300018: neve6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: neve7
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 543
+        width: 129
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: neve5
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 493
+        width: 55
+        height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: neve4
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 486
+        width: 116
+        height: 59
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: neve8
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 446
+        width: 69
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: neve9
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 398
+        width: 105
+        height: 50
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: neve2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 356
+        width: 94
+        height: 99
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: neve3
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 410
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: neve0
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 409
+        width: 87
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: neve1
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 0
+        width: 165
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: neve6
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 535
+        width: 97
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

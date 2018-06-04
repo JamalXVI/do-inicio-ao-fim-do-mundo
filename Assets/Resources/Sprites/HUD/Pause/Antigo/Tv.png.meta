@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: cd5454c8a42f22a46b297fada99f8b17
+timeCreated: 1442357793
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Tv_0
+    21300002: Tv_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: Tv_0
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 136
+        width: 539
+        height: 485
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 160.8, y: -193.7}
+        - {x: 165.8, y: -189.7}
+        - {x: 168.8, y: -158.7}
+        - {x: 197.8, y: -160.7}
+        - {x: 214.8, y: -159.7}
+        - {x: 215.8, y: -156.7}
+        - {x: 216.8, y: -143.7}
+        - {x: 216.8, y: 61.300003}
+        - {x: 215.8, y: 92.3}
+        - {x: 211.8, y: 127.3}
+        - {x: 206.8, y: 163.3}
+        - {x: 203.8, y: 183.3}
+        - {x: 201.8, y: 188.3}
+        - {x: 170.8, y: 192.3}
+        - {x: 104.8, y: 195.3}
+        - {x: -151.2, y: 195.3}
+        - {x: -202.2, y: 192.3}
+        - {x: -205.2, y: 187.3}
+        - {x: -209.2, y: 145.3}
+        - {x: -213.2, y: 97.3}
+        - {x: -215.2, y: 60.300003}
+        - {x: -215.2, y: -156.7}
+        - {x: -213.2, y: -159.7}
+        - {x: -168.2, y: -166.7}
+        - {x: -167.2, y: -189.7}
+        - {x: -157.2, y: -193.7}
+      - - {x: -47.199997, y: -99.7}
+        - {x: -61.199997, y: -98.7}
+        - {x: -100.2, y: -91.7}
+        - {x: -117.2, y: -85.7}
+        - {x: -132.2, y: -78.7}
+        - {x: -143.2, y: -66.7}
+        - {x: -154.2, y: -40.699997}
+        - {x: -157.2, y: -24.699997}
+        - {x: -163.2, y: 8.300003}
+        - {x: -164.2, y: 51.300003}
+        - {x: -163.2, y: 52.300003}
+        - {x: -161.2, y: 68.3}
+        - {x: -157.2, y: 82.3}
+        - {x: -151.2, y: 104.3}
+        - {x: -144.2, y: 118.3}
+        - {x: -128.2, y: 130.3}
+        - {x: -117.2, y: 136.3}
+        - {x: -92.2, y: 141.3}
+        - {x: -55.199997, y: 145.3}
+        - {x: -27.199997, y: 147.3}
+        - {x: 15.800003, y: 149.3}
+        - {x: 16.800003, y: 148.3}
+        - {x: 20.800003, y: 147.3}
+        - {x: 40.800003, y: 146.3}
+        - {x: 81.8, y: 141.3}
+        - {x: 102.8, y: 138.3}
+        - {x: 120.8, y: 133.3}
+        - {x: 134.8, y: 125.3}
+        - {x: 142.8, y: 117.3}
+        - {x: 150.8, y: 103.3}
+        - {x: 157.8, y: 77.3}
+        - {x: 160.8, y: 54.300003}
+        - {x: 161.8, y: 54.300003}
+        - {x: 160.8, y: -2.699997}
+        - {x: 157.8, y: -25.699997}
+        - {x: 147.8, y: -59.699997}
+        - {x: 142.8, y: -67.7}
+        - {x: 128.8, y: -82.7}
+        - {x: 125.8, y: -83.7}
+        - {x: 87.8, y: -94.7}
+        - {x: 77.8, y: -96.7}
+        - {x: 54.800003, y: -99.7}
+        - {x: 38.800003, y: -101.7}
+        - {x: 37.800003, y: -102.7}
+        - {x: -27.199997, y: -102.7}
+        - {x: -28.199997, y: -101.7}
+    - name: Tv_1
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 226
+        width: 474
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -190, y: 134.3}
+        - {x: -190, y: -132.7}
+        - {x: 190, y: -132.7}
+        - {x: 190, y: 134.3}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

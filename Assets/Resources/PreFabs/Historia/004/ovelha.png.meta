@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: f90ca5fcb169e974babee722af8a4b32
+timeCreated: 1480972598
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Cabra_body
+    21300002: Cabra_head
+    21300004: Cabra_leg
+    21300006: Cabra_foot
+    21300008: Cabra_all
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: Cabra_body
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1001
+        width: 806
+        height: 503
+      alignment: 9
+      pivot: {x: 0.096666135, y: 0.61993104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 249.71565, y: -140.58658}
+        - {x: 308.71564, y: -136.58658}
+        - {x: 319.71564, y: -131.58658}
+        - {x: 340.71564, y: -96.58658}
+        - {x: 345.71564, y: -71.58658}
+        - {x: 364.71564, y: -66.58658}
+        - {x: 366.71564, y: -64.58658}
+        - {x: 366.71564, y: 33.41342}
+        - {x: 336.71564, y: 56.41342}
+        - {x: 290.71564, y: 82.41342}
+        - {x: 238.71565, y: 88.41342}
+        - {x: 217.71565, y: 97.41342}
+        - {x: 120.71565, y: 97.41342}
+        - {x: 102.71565, y: 83.41342}
+        - {x: 82.71565, y: 91.41342}
+        - {x: 46.715652, y: 84.41342}
+        - {x: 38.715652, y: 81.41342}
+        - {x: -25.284348, y: 35.41342}
+        - {x: -39.284348, y: 1.4134216}
+        - {x: -39.284348, y: -41.58658}
+        - {x: -32.284348, y: -70.58658}
+        - {x: -18.284348, y: -116.58658}
+        - {x: -1.2843475, y: -132.58658}
+        - {x: 26.715652, y: -146.58658}
+        - {x: 77.71565, y: -156.58658}
+        - {x: 164.71565, y: -156.58658}
+        - {x: 191.71565, y: -141.58658}
+        - {x: 231.71565, y: -144.58658}
+    - name: Cabra_head
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 1537
+        width: 341
+        height: 401
+      alignment: 9
+      pivot: {x: 0.76536137, y: 0.3579199}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.296753, y: 131.00494}
+        - {x: -5.703247, y: 123.004944}
+        - {x: -32.703247, y: 131.00494}
+        - {x: -71.70325, y: 131.00494}
+        - {x: -129.70325, y: 66.004944}
+        - {x: -130.70325, y: 54.004944}
+        - {x: -130.70325, y: -70.995056}
+        - {x: -128.70325, y: -71.995056}
+        - {x: -39.703247, y: -71.995056}
+        - {x: 33.296753, y: -64.995056}
+        - {x: 41.296753, y: -54.995056}
+        - {x: 41.296753, y: 131.00494}
+    - name: Cabra_leg
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1564
+        width: 169
+        height: 382
+      alignment: 9
+      pivot: {x: 0.5044722, y: 0.8562766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20.904877, y: 28.60254}
+        - {x: -36.095123, y: 28.60254}
+        - {x: -43.095123, y: 19.60254}
+        - {x: -43.095123, y: -67.39746}
+        - {x: -14.095123, y: -163.39746}
+        - {x: -10.095123, y: -164.39746}
+        - {x: 20.904877, y: -164.39746}
+        - {x: 26.904877, y: -155.39746}
+        - {x: 42.904877, y: -61.39746}
+        - {x: 42.904877, y: 18.60254}
+    - name: Cabra_foot
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 1632
+        width: 69
+        height: 171
+      alignment: 9
+      pivot: {x: 0.76381516, y: 0.91036683}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.606934, y: 8.860596}
+        - {x: -26.606934, y: -3.1394043}
+        - {x: -26.606934, y: -78.139404}
+        - {x: 3.3930664, y: -78.139404}
+        - {x: 7.3930664, y: -77.139404}
+        - {x: 8.393066, y: -76.139404}
+        - {x: 8.393066, y: 8.860596}
+    - name: Cabra_all
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 86
+        width: 972
+        height: 811
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44.653503, y: -53.810196}
+        - {x: -29.653503, y: -61.810196}
+        - {x: 44.346497, y: -60.810196}
+        - {x: 82.3465, y: -50.810196}
+        - {x: 92.3465, y: -115.810196}
+        - {x: 82.3465, y: -168.8102}
+        - {x: 92.3465, y: -183.8102}
+        - {x: 129.3465, y: -177.8102}
+        - {x: 129.3465, y: -55.810196}
+        - {x: 140.3465, y: -147.8102}
+        - {x: 136.3465, y: -181.8102}
+        - {x: 144.3465, y: -195.8102}
+        - {x: 183.3465, y: -187.8102}
+        - {x: 177.3465, y: -72.810196}
+        - {x: 201.3465, y: -33.810196}
+        - {x: 221.3465, y: 2.189804}
+        - {x: 245.3465, y: 32.189804}
+        - {x: 245.3465, y: 130.1898}
+        - {x: 219.3465, y: 152.1898}
+        - {x: 170.3465, y: 181.1898}
+        - {x: 88.3465, y: 200.1898}
+        - {x: 10.346497, y: 202.1898}
+        - {x: -30.653503, y: 188.1898}
+        - {x: -90.6535, y: 197.1898}
+        - {x: -121.6535, y: 191.1898}
+        - {x: -151.6535, y: 204.1898}
+        - {x: -178.6535, y: 204.1898}
+        - {x: -231.6535, y: 144.1898}
+        - {x: -243.6535, y: 100.189804}
+        - {x: -243.6535, y: 17.189804}
+        - {x: -230.6535, y: -4.810196}
+        - {x: -180.6535, y: 1.1898041}
+        - {x: -164.6535, y: -5.810196}
+        - {x: -155.6535, y: -36.810196}
+        - {x: -135.6535, y: -80.810196}
+        - {x: -140.6535, y: -178.8102}
+        - {x: -131.6535, y: -191.8102}
+        - {x: -98.6535, y: -188.8102}
+        - {x: -97.6535, y: -185.8102}
+        - {x: -97.6535, y: -172.8102}
+        - {x: -97.6535, y: -185.8102}
+        - {x: -98.6535, y: -192.8102}
+        - {x: -93.6535, y: -203.8102}
+        - {x: -65.6535, y: -203.8102}
+        - {x: -63.653503, y: -201.8102}
+        - {x: -61.653503, y: -185.8102}
+        - {x: -57.653503, y: -137.8102}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: 6ffcf6040c80a144c9ad9ee455a54938
+timeCreated: 1434218735
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Cientista_Hair
+    21300002: Cientista_Head
+    21300004: Cientista_Eyebrow
+    21300006: Cientista_Body
+    21300008: Cientista_ArmUpR
+    21300010: Cientista_ArmUpL
+    21300012: Cientista_Vest
+    21300014: Cientista_Bottom
+    21300016: Cientista_ArmDownR
+    21300018: Cientista_ArmDownL
+    21300020: Cientista_LegR
+    21300022: Cientista_FootR
+    21300024: Cientista_LegL
+    21300026: Cientista_FootL
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: Cientista_Hair
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 2063
+        width: 780
+        height: 686
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cientista_Head
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 2163
+        width: 796
+        height: 683
+      alignment: 9
+      pivot: {x: .529641628, y: .0992712229}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cientista_Eyebrow
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 2550
+        width: 100
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cientista_Body
+      rect:
+        serializedVersion: 2
+        x: 2015
+        y: 1310
+        width: 506
+        height: 749
+      alignment: 9
+      pivot: {x: .518652141, y: .103080474}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cientista_ArmUpR
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 1539
+        width: 322
+        height: 514
+      alignment: 9
+      pivot: {x: .833375931, y: .829782665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cientista_ArmUpL
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 1519
+        width: 193
+        height: 544
+      alignment: 9
+      pivot: {x: .293491811, y: .880180597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cientista_Vest
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1088
+        width: 506
+        height: 703
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cientista_Bottom
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 533
+        width: 712
+        height: 894
+      alignment: 9
+      pivot: {x: .566277385, y: .890605628}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cientista_ArmDownR
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 964
+        width: 169
+        height: 545
+      alignment: 9
+      pivot: {x: .452590495, y: .925392389}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cientista_ArmDownL
+      rect:
+        serializedVersion: 2
+        x: 1657
+        y: 953
+        width: 187
+        height: 559
+      alignment: 9
+      pivot: {x: .369830608, y: .933626056}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cientista_LegR
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 460
+        width: 177
+        height: 417
+      alignment: 9
+      pivot: {x: .655884504, y: 1.96155667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cientista_FootR
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 294
+        width: 270
+        height: 180
+      alignment: 9
+      pivot: {x: .29027009, y: .788379073}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cientista_LegL
+      rect:
+        serializedVersion: 2
+        x: 2355
+        y: 469
+        width: 177
+        height: 414
+      alignment: 9
+      pivot: {x: .155656889, y: 1.94310665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cientista_FootL
+      rect:
+        serializedVersion: 2
+        x: 2083
+        y: 308
+        width: 268
+        height: 178
+      alignment: 9
+      pivot: {x: .30631268, y: .738598228}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

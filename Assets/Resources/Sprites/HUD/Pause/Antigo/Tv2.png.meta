@@ -1,0 +1,126 @@
+fileFormatVersion: 2
+guid: 05496302dc055b340a1d42b4ac141ba6
+timeCreated: 1442364380
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Opcoes
+    21300002: Galeria
+    21300004: Fases
+    21300006: Retornar
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: Opcoes
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 551
+        width: 532
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -172.23404, y: 88.91254}
+        - {x: -172.23404, y: -87.08746}
+        - {x: 173.76596, y: -87.08746}
+        - {x: 173.76596, y: 88.91254}
+    - name: Galeria
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 518
+        width: 555
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -179.69623, y: 99.03665}
+        - {x: -179.69623, y: -97.96335}
+        - {x: 181.30377, y: -97.96335}
+        - {x: 181.30377, y: 99.03665}
+    - name: Fases
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 181
+        width: 397
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -128.64658, y: 89.2435}
+        - {x: -128.64658, y: -88.7565}
+        - {x: 130.35342, y: -88.7565}
+        - {x: 130.35342, y: 89.2435}
+    - name: Retornar
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 0
+        width: 727
+        height: 469
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -235.01184, y: 152}
+        - {x: -235.01184, y: -152}
+        - {x: 236.98816, y: -152}
+        - {x: 236.98816, y: 152}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
