@@ -118,7 +118,7 @@ public class Carregando : MonoBehaviour {
         {
             enviouInfo = true;
             Game_Player.game_player.EnviarInfoNivel = false;
-            Debug.Log("WWW Ok!: " + www.data);
+            Debug.Log("WWW Ok!: " + www.text);
         }
         else
         {

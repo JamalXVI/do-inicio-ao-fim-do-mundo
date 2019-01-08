@@ -99,7 +99,7 @@ public class PeguntasInformacao : MonoBehaviour {
         if (www.error == null)
         {
             Game_Player.game_player.EnviarInfoNivel = false;
-            Debug.Log("WWW Ok!: " + www.data);
+            Debug.Log("WWW Ok!: " + www.text);
         }
         else
         {

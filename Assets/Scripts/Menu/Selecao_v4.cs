@@ -117,7 +117,7 @@ public class Selecao_v4 : MonoBehaviour {
     {
         var cnat = from f in Game_Conquistas.instancia.conquistas where f.Anunciada == false && f.Completada == true select f;
         conquistasNaoAtendidas = cnat.ToList();
-        Transform notificacao = conquistaObjeto.transform.FindChild("Notific");
+        Transform notificacao = conquistaObjeto.transform.Find("Notific");
         if (conquistasNaoAtendidas.Count > 0)
         {
             notificacao.gameObject.SetActive(true);
@@ -129,7 +129,7 @@ public class Selecao_v4 : MonoBehaviour {
     }
     private void VerificarNotificacaoLoja()
     {
-        Transform notificacao = loja.transform.FindChild("Notific");
+        Transform notificacao = loja.transform.Find("Notific");
         if (Game_Temp.instancia.NotificacaoLoja)
         {
             notificacao.gameObject.SetActive(true);
@@ -363,7 +363,7 @@ public class Selecao_v4 : MonoBehaviour {
             return;
         }
         SoundManager.instance.PlaySingle(somPlay);
-        Transform notificacao = loja.transform.FindChild("Notific");
+        Transform notificacao = loja.transform.Find("Notific");
         notificacao.gameObject.SetActive(false);
         MudarDeCena(17);
     }
@@ -385,7 +385,7 @@ public class Selecao_v4 : MonoBehaviour {
             if (!Game_Quizz.instancia.NivelQuizz[nivelAtual].Notificado)
             {
                 Game_Quizz.instancia.NivelQuizz[nivelAtual].Notificado = true;
-                quizz.transform.FindChild("Notific").gameObject.SetActive(false);
+                quizz.transform.Find("Notific").gameObject.SetActive(false);
 
             }
             ProximaQuestao();
@@ -418,7 +418,7 @@ public class Selecao_v4 : MonoBehaviour {
         if (www.error == null)
         {
             Game_Player.game_player.EnviarInfoNivel = false;
-            Debug.Log("WWW Ok!: " + www.data);
+            Debug.Log("WWW Ok!: " + www.text);
         }
         else
         {
@@ -572,11 +572,11 @@ public class Selecao_v4 : MonoBehaviour {
         }
         if (Game_Quizz.instancia.NivelQuizz[i].Liberado && !Game_Quizz.instancia.NivelQuizz[i].Notificado)
         {
-            quizz.transform.FindChild("Notific").gameObject.SetActive(true);
+            quizz.transform.Find("Notific").gameObject.SetActive(true);
         }
         else
         {
-            quizz.transform.FindChild("Notific").gameObject.SetActive(false);
+            quizz.transform.Find("Notific").gameObject.SetActive(false);
         }
         nomeFaseBranco.text = nomeFases[i].ToUpper();
         nomeFasePreto.text = nomeFases[i].ToUpper();
@@ -601,7 +601,7 @@ public class Selecao_v4 : MonoBehaviour {
         int j = (i + 1) % 3 == 0 ? 3 : (i + 1) % 3;
         int k = Convert.ToInt32(Convert.ToDouble((i) / 3));
         var filtro = from f in fases where f.name.Contains((k + 1).ToString() + "-" + (j).ToString()) select f;
-        filtro.First<GameObject>().transform.FindChild("Block").gameObject.SetActive(false);
+        filtro.First<GameObject>().transform.Find("Block").gameObject.SetActive(false);
     }
     private void MostrarPontuacao(float pontuacao, float pontuacaoMaxima)
     {
@@ -660,9 +660,9 @@ public class Selecao_v4 : MonoBehaviour {
                 ultimaConquista = conquista.Nome;
                 conquistaSel = conquista;
                 animConquista.SetBool("Conquista", true);
-                var painel = conquistaHud.transform.FindChild("Panel");
-                painel.FindChild("Titulo").GetComponent<Text>().text = conquista.Nome;
-                painel.FindChild("Descrição").GetComponent<Text>().text = conquista.Descricao;
+                var painel = conquistaHud.transform.Find("Panel");
+                painel.Find("Titulo").GetComponent<Text>().text = conquista.Nome;
+                painel.Find("Descrição").GetComponent<Text>().text = conquista.Descricao;
                 return;
             }
         }

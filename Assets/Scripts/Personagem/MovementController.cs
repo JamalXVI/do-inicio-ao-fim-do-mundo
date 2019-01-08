@@ -1202,7 +1202,7 @@ public void HabilidadeDescer(bool iniciou)
    if (iniciou)
    {
        Game_Player.game_player.Jogador.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 30);
-       gerenciador.corpo_habilidade.GetComponent<Plataforma_Descer>().SumirColider(this.transform.FindChild("Colliders").gameObject);
+       gerenciador.corpo_habilidade.GetComponent<Plataforma_Descer>().SumirColider(this.transform.Find("Colliders").gameObject);
       // Game_Player.game_player.Jogador_S.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 30);
    }
    

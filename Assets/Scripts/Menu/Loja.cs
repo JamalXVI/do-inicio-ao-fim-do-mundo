@@ -56,10 +56,10 @@ public class Loja : MonoBehaviour {
     {
         foreach (var painel in paineis)
         {
-            painel.transform.FindChild("Nome").GetComponent<Text>().text = "";
-            painel.transform.FindChild("Preço").GetComponent<Text>().text = "";
-            painel.transform.FindChild("Engr").gameObject.SetActive(false);
-            painel.transform.FindChild("Circle").gameObject.SetActive(false);
+            painel.transform.Find("Nome").GetComponent<Text>().text = "";
+            painel.transform.Find("Preço").GetComponent<Text>().text = "";
+            painel.transform.Find("Engr").gameObject.SetActive(false);
+            painel.transform.Find("Circle").gameObject.SetActive(false);
             painel.SetActive(false);
         }
 
@@ -101,7 +101,7 @@ public class Loja : MonoBehaviour {
 
     private static void PreencherLiberadoEComprado(ItemLoja item, GameObject painel)
     {
-        var circulo = painel.transform.FindChild("Circle");
+        var circulo = painel.transform.Find("Circle");
         circulo.gameObject.SetActive(true);
         circulo.transform.Find("Lock").gameObject.SetActive(!item.Liberado);
         circulo.transform.Find("Check").gameObject.SetActive(item.Comprado);
@@ -109,9 +109,9 @@ public class Loja : MonoBehaviour {
 
     private static void PreencherInfoPainel(ItemLoja item, GameObject painel)
     {
-        painel.transform.FindChild("Nome").GetComponent<Text>().text = item.Nome.ToUpper();
-        painel.transform.FindChild("Preço").GetComponent<Text>().text = Convert.ToString(item.Preco);
-        painel.transform.FindChild("Engr").gameObject.SetActive(true);
+        painel.transform.Find("Nome").GetComponent<Text>().text = item.Nome.ToUpper();
+        painel.transform.Find("Preço").GetComponent<Text>().text = Convert.ToString(item.Preco);
+        painel.transform.Find("Engr").gameObject.SetActive(true);
     }
 
     private void FazerEventoClick(ItemLoja item, Button btn, int i)
@@ -161,7 +161,7 @@ public class Loja : MonoBehaviour {
     {
         acionouMusica = true;
         idMusica = item.Id;
-        Text descricao = painelMusica.transform.FindChild("Panel").FindChild("Text").GetComponent<Text>();
+        Text descricao = painelMusica.transform.Find("Panel").Find("Text").GetComponent<Text>();
         descricao.text = item.Descricao.ToUpper();
     }
     public void TocarMusica()
@@ -183,7 +183,7 @@ public class Loja : MonoBehaviour {
                 artesSelecionadas.Add(imagensLoja[i]);
             }
         }
-        Text descricao = painelGaleria.transform.FindChild("Panel").FindChild("Text").GetComponent<Text>();
+        Text descricao = painelGaleria.transform.Find("Panel").Find("Text").GetComponent<Text>();
         descricao.text = item.Descricao.ToUpper();
         acionouGaleria = true;
         indiceGaleria = 0;
@@ -219,7 +219,7 @@ public class Loja : MonoBehaviour {
     }
     public void AtualizarImagemGaleriaArte()
     {
-        GameObject imagem = painelGaleria.transform.FindChild("Image").gameObject;
+        GameObject imagem = painelGaleria.transform.Find("Image").gameObject;
         Image image = imagem.GetComponent<Image>();
         image.sprite = artesSelecionadas[indiceGaleria];
     }

@@ -237,9 +237,9 @@ public class Selecao_v3 : MonoBehaviour {
                 ultimaConquista = conquista.Nome;
                 conquistaSel = conquista;
                 animConquista.SetBool("Conquista", true);
-                var painel = conquistaHud.transform.FindChild("Panel");
-                painel.FindChild("Titulo").GetComponent<Text>().text = conquista.Nome;
-                painel.FindChild("Descrição").GetComponent<Text>().text = conquista.Descricao;
+                var painel = conquistaHud.transform.Find("Panel");
+                painel.Find("Titulo").GetComponent<Text>().text = conquista.Nome;
+                painel.Find("Descrição").GetComponent<Text>().text = conquista.Descricao;
                 return;
             }
         }

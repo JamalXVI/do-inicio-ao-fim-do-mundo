@@ -20,10 +20,10 @@ public class CenaConquista : MonoBehaviour {
     private void EncontrarObjetoConquista()
     {
         conquistas = new List<GameObject>();
-        GameObject lista = transform.FindChild("BasePanel").gameObject.transform.FindChild("Lista").gameObject;
+        GameObject lista = transform.Find("BasePanel").gameObject.transform.Find("Lista").gameObject;
         for (int i = 0; i < maximoConquista; i++)
         {
-            conquistas.Add(lista.transform.FindChild(" (" + i + ")").gameObject);
+            conquistas.Add(lista.transform.Find(" (" + i + ")").gameObject);
         }
     }
 
@@ -43,9 +43,9 @@ public class CenaConquista : MonoBehaviour {
         Text texto = conquista.GetComponentInChildren<Text>();
         Conquista c = Game_Conquistas.instancia.conquistas[idConquista];
         texto.text = c.Nome;
-        GameObject circulo = conquista.transform.FindChild("Circle").gameObject;
-        GameObject check = circulo.transform.FindChild("Check").gameObject;
-        GameObject cadeado = circulo.transform.FindChild("Lock").gameObject;
+        GameObject circulo = conquista.transform.Find("Circle").gameObject;
+        GameObject check = circulo.transform.Find("Check").gameObject;
+        GameObject cadeado = circulo.transform.Find("Lock").gameObject;
         bool visivel = false;
         if (c.Completada)
         {
