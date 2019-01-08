@@ -39,18 +39,18 @@ public class Carregando : MonoBehaviour {
         
         if (!Game_Temp.instancia.SemSalvar)
         {
-            Game_Player.game_player.SalvarMoedas();
-            Game_Player.game_player.Salvar(ConstantesDoSistema.Caminho);
-            Game_Player.game_player.ZerarVariaveis();
-            Game_Player.game_player.Parar_Jogador = false;
+            Game_Player.instancia.SalvarMoedas();
+            Game_Player.instancia.Salvar(ConstantesDoSistema.Caminho);
+            Game_Player.instancia.ZerarVariaveis();
+            Game_Player.instancia.Parar_Jogador = false;
         }
         else
         {
             Game_Temp.instancia.SemSalvar = false;
         }
-        if (Game_Player.game_player.EnviarInfoNivel)
+        if (Game_Player.instancia.EnviarInfoNivel)
         {
-            AdicionarInfo(Game_Player.game_player.RetornarNivel(Game_Player.game_player.UltimoNivel), Game_Player.game_player.UltimoNivel);
+            AdicionarInfo(Game_Player.instancia.RetornarNivel(Game_Player.instancia.UltimoNivel), Game_Player.instancia.UltimoNivel);
             return;
         }
         else {
@@ -75,14 +75,14 @@ public class Carregando : MonoBehaviour {
 	}
     IEnumerator CarregarNivel()
     {
-        int fase = Game_Temp.instancia.TrocarFase ? Game_Temp.instancia.FaseTroca : Game_Player.game_player.troca_fases;
+        int fase = Game_Temp.instancia.TrocarFase ? Game_Temp.instancia.FaseTroca : Game_Player.instancia.troca_fases;
         AsyncOperation async = Application.LoadLevelAsync(fase);
         yield return async;
 
     }
     public void AdicionarInfo(Nivel nivel, int level)
     {
-        if (!Game_Player.game_player.FornecerInformacoes)
+        if (!Game_Player.instancia.FornecerInformacoes)
         {
             enviouInfo = true;
             enviandoInfo = false;
@@ -117,13 +117,13 @@ public class Carregando : MonoBehaviour {
         if (www.error == null)
         {
             enviouInfo = true;
-            Game_Player.game_player.EnviarInfoNivel = false;
+            Game_Player.instancia.EnviarInfoNivel = false;
             Debug.Log("WWW Ok!: " + www.text);
         }
         else
         {
             enviouInfo = true;
-            Game_Player.game_player.EnviarInfoNivel = false;
+            Game_Player.instancia.EnviarInfoNivel = false;
             Debug.Log("WWW Error: " + www.error);
 
         }

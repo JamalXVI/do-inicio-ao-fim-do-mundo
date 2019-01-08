@@ -47,7 +47,7 @@ public class Game_Inimigo : MonoBehaviour {
     }
     public void Destruir()
     {
-        Game_Player.game_player.QuantidadeInimigosFase++;
+        Game_Player.instancia.QuantidadeInimigosFase++;
     }
     public void Atualizar()
     {

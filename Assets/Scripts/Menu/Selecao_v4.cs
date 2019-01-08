@@ -255,17 +255,17 @@ public class Selecao_v4 : MonoBehaviour {
             EsperarSensibilidadeTecla();
             return;
         }
-        if (Input.GetKey(Game_Player.game_player.Teclas["direita"]))
+        if (Input.GetKey(Game_Player.instancia.Teclas["direita"]))
         {
             teclaSensivel = true;
             MoverDireita();
         }
-        if (Input.GetKey(Game_Player.game_player.Teclas["esquerda"]))
+        if (Input.GetKey(Game_Player.instancia.Teclas["esquerda"]))
         {
             teclaSensivel = true;
             MoverEsquerda();
         }
-        if (Input.GetAxis("Submit") > 0 || Input.GetKey(Game_Player.game_player.Teclas["habilidade"]))
+        if (Input.GetAxis("Submit") > 0 || Input.GetKey(Game_Player.instancia.Teclas["habilidade"]))
         {
             teclaSensivel = true;
             SelecionarCenario();
@@ -328,14 +328,14 @@ public class Selecao_v4 : MonoBehaviour {
             return;
         }
         SoundManager.instance.PlaySingle(somPlay);
-        MudarDeCena(Game_Player.game_player.ordem_fases[nivelAtual]);
+        MudarDeCena(Game_Player.instancia.ordem_fases[nivelAtual]);
     }
     private void VerificarFasesAtivas()
     {
-        for (int i = 0; i < Game_Player.game_player.ordem_fases.Length; i++)
+        for (int i = 0; i < Game_Player.instancia.ordem_fases.Length; i++)
         {
             int valor = i == 0 ? 0 : i - 1;
-            if (Game_Player.game_player.VerificarSePassouFase(valor) || i == 0)
+            if (Game_Player.instancia.VerificarSePassouFase(valor) || i == 0)
             {
                 linhaDoTempo.SetBool((i + 1).ToString(), true);
                 LiberarCadeado(i);
@@ -373,10 +373,10 @@ public class Selecao_v4 : MonoBehaviour {
         {
             return;
         }
-        if (Game_Quizz.instancia.NivelQuizz[nivelAtual].Liberado && Game_Player.game_player.Moedas_Jogo >= precoQuizz)
+        if (Game_Quizz.instancia.NivelQuizz[nivelAtual].Liberado && Game_Player.instancia.Moedas_Jogo >= precoQuizz)
         {
             SoundManager.instance.PlaySingle(somPlay);
-            Game_Player.game_player.MoedasGastas += precoQuizz;
+            Game_Player.instancia.MoedasGastas += precoQuizz;
             indiceQuestaoQuizz = -1;
             quizzObject.SetActive(true);
             acabouQuizz = false;
@@ -397,7 +397,7 @@ public class Selecao_v4 : MonoBehaviour {
     }
     public void AdicionarQuizz(int level, int acertos, int erros)
     {
-        if (!Game_Player.game_player.FornecerInformacoes)
+        if (!Game_Player.instancia.FornecerInformacoes)
         {
             return;
         }
@@ -417,12 +417,12 @@ public class Selecao_v4 : MonoBehaviour {
         // check for errors
         if (www.error == null)
         {
-            Game_Player.game_player.EnviarInfoNivel = false;
+            Game_Player.instancia.EnviarInfoNivel = false;
             Debug.Log("WWW Ok!: " + www.text);
         }
         else
         {
-            Game_Player.game_player.EnviarInfoNivel = false;
+            Game_Player.instancia.EnviarInfoNivel = false;
             Debug.Log("WWW Error: " + www.error);
 
         }
@@ -430,7 +430,7 @@ public class Selecao_v4 : MonoBehaviour {
     private void ProximaQuestao()
     {
         indiceQuestaoQuizz++;
-        Game_Player.game_player.Salvar(ConstantesDoSistema.Caminho);
+        Game_Player.instancia.Salvar(ConstantesDoSistema.Caminho);
         if (indiceQuestaoQuizz >= Game_Quizz.instancia.QuestaoQuizz[nivelAtual].Perguntas.Length)
         {
             quizzObject.SetActive(false);
@@ -477,7 +477,7 @@ public class Selecao_v4 : MonoBehaviour {
             if (!Game_Quizz.instancia.NivelQuizz[nivelAtual].Acertadas[indiceQuestaoQuizz])
             {
                 Game_Quizz.instancia.NivelQuizz[nivelAtual].Acertadas[indiceQuestaoQuizz] = true;
-                Game_Player.game_player.AdicionarMoedas(premioQuizzMoedas);
+                Game_Player.instancia.AdicionarMoedas(premioQuizzMoedas);
 
             }
             else
@@ -518,7 +518,7 @@ public class Selecao_v4 : MonoBehaviour {
     }
     public void AdicionarQuizzes(int level, int indice, int acertos, int erros, int resposta)
     {
-        if (!Game_Player.game_player.FornecerInformacoes)
+        if (!Game_Player.instancia.FornecerInformacoes)
         {
             return;
         }
@@ -536,7 +536,7 @@ public class Selecao_v4 : MonoBehaviour {
     public void IrParaConquistas()
     {
         SoundManager.instance.PlaySingle(somPlay);
-        MudarDeCena(Game_Player.game_player.faseConquista);
+        MudarDeCena(Game_Player.instancia.faseConquista);
     }
     private void MudarDeCena(int nivel)
     {
@@ -555,7 +555,7 @@ public class Selecao_v4 : MonoBehaviour {
         Nivel nivel = null;
         try
         {
-            nivel = Game_Player.game_player.RetornarNivel(Game_Player.game_player.ordem_fases[i]);
+            nivel = Game_Player.instancia.RetornarNivel(Game_Player.instancia.ordem_fases[i]);
         }catch(Exception e)
         {
 

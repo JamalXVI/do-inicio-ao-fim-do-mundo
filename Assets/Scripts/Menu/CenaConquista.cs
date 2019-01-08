@@ -68,14 +68,14 @@ public class CenaConquista : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetAxis("Submit") > 0 || Input.GetKey(Game_Player.game_player.Teclas["habilidade"]))
+        if (Input.GetAxis("Submit") > 0 || Input.GetKey(Game_Player.instancia.Teclas["habilidade"]))
         {
             Ok();
         }
 	}
     public void Ok()
     {
-        MudarDeCena(Game_Player.game_player.troca_fases);
+        MudarDeCena(Game_Player.instancia.troca_fases);
     }
     private void MudarDeCena(int nivel)
     {

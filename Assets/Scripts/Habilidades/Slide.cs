@@ -17,7 +17,7 @@ public class Slide : MonoBehaviour {
     void OnCollisionStay2D(Collision2D col)
     {
 
-        if (col.gameObject.Equals(Game_Player.game_player.Jogador.gameObject) && col.gameObject.name.Contains("Primitivo"))
+        if (col.gameObject.Equals(Game_Player.instancia.Jogador.gameObject) && col.gameObject.name.Contains("Primitivo"))
         {
             AtivarHabilidade(col);
         }
@@ -25,9 +25,9 @@ public class Slide : MonoBehaviour {
 
     private void AtivarHabilidade(Collision2D col)
     {
-        Game_Player.game_player.AtivarHabilidades("Slide");
+        Game_Player.instancia.AtivarHabilidades("Slide");
         float total = distancia.x + this.GetComponent<BoxCollider2D>().size.x;
-        gerenciador.IniciarHabilidade(Game_Player.game_player.Jogador, this.transform, new Vector2(total,
+        gerenciador.IniciarHabilidade(Game_Player.instancia.Jogador, this.transform, new Vector2(total,
                     distancia.y), true);
     }
 

@@ -27,6 +27,7 @@ public class ConstantesDoSistema : MonoBehaviour {
     public static int Musica = 4;
     public static int FasesExtras = 5;
     public static int Codex = 6;
+
     public static string RetornarMac()
     {
         string info = "";

@@ -175,7 +175,7 @@ public class Opcoes : MonoBehaviour
         {
 
         }
-        CarregarFase(Game_Player.game_player.troca_fases);
+        CarregarFase(Game_Player.instancia.troca_fases);
     }
     private void CarregarFase(int i)
     {
@@ -192,7 +192,7 @@ public class Opcoes : MonoBehaviour
         }
         else
         {
-            Application.LoadLevel(Game_Player.game_player.troca_fases);
+            Application.LoadLevel(Game_Player.instancia.troca_fases);
         }
     } 
 

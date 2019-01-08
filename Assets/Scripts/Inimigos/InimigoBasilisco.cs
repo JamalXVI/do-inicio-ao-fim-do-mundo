@@ -21,7 +21,7 @@ public class InimigoBasilisco : Game_Inimigo {
     {
         if (anim.GetCurrentAnimatorStateInfo(0).nameHash != stuned)
         {
-            foreach (Transform col in Game_Player.game_player.Jogador)
+            foreach (Transform col in Game_Player.instancia.Jogador)
             {
                 if (colisor.gameObject == col.gameObject && vivo)
                 {
@@ -34,11 +34,11 @@ public class InimigoBasilisco : Game_Inimigo {
     }
     private void VerificarMatarJogador()
     {
-        MovementController movimentoAtual = Game_Player.game_player.Movimento_Atual;
+        MovementController movimentoAtual = Game_Player.instancia.Movimento_Atual;
         if (movimentoAtual.vivo && !movimentoAtual.invencivel)
         {
             gerenciador.MatarPersonagem();
-            Game_Player.game_player.MatarJogador();
+            Game_Player.instancia.MatarJogador();
         }
     }
 }

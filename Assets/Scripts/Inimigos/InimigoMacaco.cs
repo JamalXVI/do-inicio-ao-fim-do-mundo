@@ -126,7 +126,7 @@ public class InimigoMacaco : Game_Inimigo
 
     private void VerificarPuloPersonagem()
     {
-        MovementController movimentos_personagem = Game_Player.game_player.Jogador.GetComponent<MovementController>();
+        MovementController movimentos_personagem = Game_Player.instancia.Jogador.GetComponent<MovementController>();
         if (!pulando && movimentos_personagem.DeuPulo())
         {
             AcaoPular();
@@ -152,7 +152,7 @@ public class InimigoMacaco : Game_Inimigo
             if (vivojog.vivo && !vivojog.invencivel)
             {
                 gerenciador.MatarPersonagem();
-                Game_Player.game_player.MatarJogador();
+                Game_Player.instancia.MatarJogador();
                 Game_Conquistas.instancia.AdicionarMortePorAnimais("macaco");
                 Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), colisor.collider);
             }
@@ -177,11 +177,11 @@ public class InimigoMacaco : Game_Inimigo
     }
     void AdicionarItem()
     {
-        if (Game_Player.game_player.quantidade_item[idItem] <= 0)
+        if (Game_Player.instancia.quantidade_item[idItem] <= 0)
         {
-            Game_Player.game_player.quantidade_item[idItem] += 1;    
+            Game_Player.instancia.quantidade_item[idItem] += 1;    
         }
-        Game_Player.game_player.QuantidadeInimigosFase++;
+        Game_Player.instancia.QuantidadeInimigosFase++;
     }
     void VerificarGround(Collision2D col)
     {
@@ -230,7 +230,7 @@ public class InimigoMacaco : Game_Inimigo
             anim.SetTrigger("Som");
             //Mudar_Coliders(false);
             parar_tudo = true;
-            Duracao_Paralisado = Game_Player.game_player.socolinha.duracao_paralisado;
+            Duracao_Paralisado = Game_Player.instancia.socolinha.duracao_paralisado;
             return;
         }
     }

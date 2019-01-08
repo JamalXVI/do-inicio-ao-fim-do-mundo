@@ -14,6 +14,6 @@ public class Instrucao : MonoBehaviour {
 	}
     public void Iniciar()
     {
-        Application.LoadLevel(Game_Player.game_player.troca_fases);
+        Application.LoadLevel(Game_Player.instancia.troca_fases);
     }
 }

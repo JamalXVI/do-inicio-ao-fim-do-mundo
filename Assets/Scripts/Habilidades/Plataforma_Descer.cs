@@ -25,7 +25,7 @@ public class Plataforma_Descer : MonoBehaviour {
     }
     void OnCollisionExit2D(Collision2D col)
     {
-        if (col.gameObject.Equals(Game_Player.game_player.Jogador.gameObject))
+        if (col.gameObject.Equals(Game_Player.instancia.Jogador.gameObject))
         {
             gerenciador.PararHabilidade();
         }
@@ -37,7 +37,7 @@ public class Plataforma_Descer : MonoBehaviour {
     private bool Condicao_Subir(Collision2D col)
     {
         var caixaColisao = GetComponent<BoxCollider2D>();
-        if (col.gameObject.Equals(Game_Player.game_player.Jogador.gameObject) &&
+        if (col.gameObject.Equals(Game_Player.instancia.Jogador.gameObject) &&
             (col.transform.position.y < transform.position.y)
             && (transform.position.x -  caixaColisao.bounds.max.x/2) < col.transform.position.x &&
             (transform.position.x + caixaColisao.bounds.max.x / 2) > col.transform.position.x)
@@ -49,14 +49,14 @@ public class Plataforma_Descer : MonoBehaviour {
 
     private void AtivarHabilidade(Collision2D col)
     {
-        if (col.gameObject.Equals(Game_Player.game_player.Jogador.gameObject) && col.gameObject.name.Contains("Socolinha"))
+        if (col.gameObject.Equals(Game_Player.instancia.Jogador.gameObject) && col.gameObject.name.Contains("Socolinha"))
         {
             if (col.transform.position.y > (this.transform.position.y + this.GetComponent<BoxCollider2D>().size.y-1))
             {
-                Game_Player.game_player.AtivarHabilidades("Descer");
+                Game_Player.instancia.AtivarHabilidades("Descer");
                 float total = distancia.x + this.GetComponent<BoxCollider2D>().size.x;
                 float totaly = distancia.y;
-                gerenciador.IniciarHabilidade(Game_Player.game_player.Jogador, this.transform, new Vector2(total,
+                gerenciador.IniciarHabilidade(Game_Player.instancia.Jogador, this.transform, new Vector2(total,
                     totaly), false);
             }
         }
@@ -77,7 +77,7 @@ public class Plataforma_Descer : MonoBehaviour {
             {
                 verificaSumir = false;
                 AtivarColiders(true);
-                Game_Player.game_player.PararHabilidades();
+                Game_Player.instancia.PararHabilidades();
                 
             }
            

@@ -7,13 +7,13 @@ public class CoinCounter : MonoBehaviour {
     void Update()
     {
         string texto = "";
-        if (Game_Player.game_player.Moedas < 10)
+        if (Game_Player.instancia.Moedas < 10)
         {
-            texto = "0" + Game_Player.game_player.Moedas.ToString();
+            texto = "0" + Game_Player.instancia.Moedas.ToString();
         }
         else
         {
-            texto = Game_Player.game_player.Moedas.ToString();
+            texto = Game_Player.instancia.Moedas.ToString();
         }
         GetComponent<Text>().text = texto;
 

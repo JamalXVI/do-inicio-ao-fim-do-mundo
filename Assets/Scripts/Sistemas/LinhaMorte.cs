@@ -23,14 +23,14 @@ public class LinhaMorte : MonoBehaviour {
 			                                     1 << LayerMask.NameToLayer("Jogador"));
 
             //FindObjectOfType<Gerenciador>().matarPersonagem();
-			if (Game_Player.game_player.VerificarSeEhPrincipal(hit.transform)) {
+			if (Game_Player.instancia.VerificarSeEhPrincipal(hit.transform)) {
 				hit.transform.GetComponent<MovementController>().SetAllCollidersStatus(false);
                 hit.transform.GetComponent<MovementController>().vivo = false;
                 hit.transform.GetComponent<SpriteRenderer>().sortingLayerName = "Foregroud";
                // Game_Player.game_player.AcionarSegundoJogador();
                 
 			}else{
-				Game_Player.game_player.resetar_jogador();
+				Game_Player.instancia.resetar_jogador();
 			}
             
         }

@@ -12,7 +12,7 @@ public class ContadorMoedaGeral : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-        texto.text = Game_Player.game_player.Moedas_Jogo.ToString();
+        texto.text = Game_Player.instancia.Moedas_Jogo.ToString();
 	
 	}
 }

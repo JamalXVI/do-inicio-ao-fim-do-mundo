@@ -8,7 +8,7 @@ using System.Collections.Generic;
 [Serializable]
 public class Game_Player : Game_Base
 {
-    public static Game_Player game_player;
+    public static Game_Player instancia = null;
     private int vidas;
     private int vidas_extras;
     private int vidas_totais;
@@ -16,8 +16,6 @@ public class Game_Player : Game_Base
     private int moedas;
     private int pontuacao;
     private String nome_cena;
-    private Transform jogador;
-    private Transform jogador_secundario;
     private MovementController movimentos;
     public bool fim_jogo;
     public int[] quantidade_item;
@@ -220,25 +218,10 @@ public class Game_Player : Game_Base
     }
     
 
-    public bool Parar_Jogador
-    {
-        get { return parar_jogador; }
-        set { parar_jogador = value; }
-    }
+    public bool Parar_Jogador { get; set; }
     
-    public Transform Jogador
-    {
-        get { return jogador; }
-        set
-        { jogador = value;       }
-    }
-    public Transform Jogador_S
-    {
-        get { return jogador_secundario; }
-        set
-        {
-            jogador_secundario = value;}
-    }
+    public Transform Jogador{ get; set; }
+    public Transform JogadorSecundario { get; set; }
     
     public int Pontuacao
     {
@@ -280,15 +263,15 @@ public class Game_Player : Game_Base
 
     void Awake()
     {
-        if (Game_Player.game_player == null)
+        if (Game_Player.instancia == null)
         {
             DontDestroyOnLoad(gameObject);
 
-            game_player = this;
+            instancia = this;
             IniciarVariaveisDeJogo();
             DefinicoesTeclas();
         }
-        else if (Game_Player.game_player != this)
+        else if (Game_Player.instancia != this)
         {
 
             Destroy(gameObject);
@@ -299,10 +282,10 @@ public class Game_Player : Game_Base
 
     private static void IniciarVariaveisDeJogo()
     {
-        Game_Player.game_player.quantidade_item = new int[999];
-        Game_Player.game_player.niveis = new Nivel[999];
-        Game_Player.game_player.FalasNoJogo = new bool[999];
-        Game_Player.game_player.apertou_botao_troca = false;
+        Game_Player.instancia.quantidade_item = new int[999];
+        Game_Player.instancia.niveis = new Nivel[999];
+        Game_Player.instancia.FalasNoJogo = new bool[999];
+        Game_Player.instancia.apertou_botao_troca = false;
     }
     void Start()
     {
@@ -310,46 +293,46 @@ public class Game_Player : Game_Base
     public void reniciar()
     {
         PegarJogador();
-        Game_Player.game_player.fim_jogo = false;
-        game_player.Reiniciar_Vidas();
+        Game_Player.instancia.fim_jogo = false;
+        instancia.Reiniciar_Vidas();
     }
     public void PegarJogador()
     {
-        jogador = null;
-        jogador_secundario = null;
+        Jogador = null;
+        JogadorSecundario = null;
         foreach (GameObject jogadore in GameObject.FindGameObjectsWithTag("PlayerP"))
         {
             if (jogadore.name.Contains("Socolinha"))
             {
                 if (!jogadore.Equals(jogador_morto))
                 {
-                    jogador = jogadore.transform;
+                    Jogador = jogadore.transform;
                 }
             }
             else if (!jogadore.Equals(jogador_morto))
             {
-                jogador_secundario = jogadore.transform;
+                JogadorSecundario = jogadore.transform;
             }
         }
-        if (jogador == null)
+        if (Jogador == null)
         {
-            jogador = jogador_secundario;
-            jogador_secundario = null;  
+            Jogador = JogadorSecundario;
+            JogadorSecundario = null;  
         }
-        if (jogador_secundario != null)
+        if (JogadorSecundario != null)
         {
-            mudar_secundario();
-            mudar_primario();
-            this.jogador_secundario.position = new Vector3(jogador.position.x-10, jogador.position.y, jogador.position.z);
+            MudarSecundario();
+            MudarPrimario();
+            this.JogadorSecundario.position = new Vector3(Jogador.position.x-10, Jogador.position.y, Jogador.position.z);
 
         } 
-        Game_Player.game_player.movimentos = jogador.GetComponent<MovementController>();
+        Game_Player.instancia.movimentos = Jogador.GetComponent<MovementController>();
 
         movimentos.ColisaoPersonagem(true);
         if (iniciou_fase)
         {
             iniciou_fase = false;
-            if (Jogador_S != null)
+            if (JogadorSecundario != null)
             {
                 iniciou_dois_jogadores = true;
             }else
@@ -368,61 +351,55 @@ public class Game_Player : Game_Base
         }
         if(!primitivo.Ativo)
         {
-            if(jogador.name.ToLower().Contains("primitivo"))
+            if(Jogador.name.ToLower().Contains("primitivo"))
             {
-                jogador.gameObject.SetActive(false);
-                jogador = jogador_secundario;
+                Jogador.gameObject.SetActive(false);
+                Jogador = JogadorSecundario;
             }
             else
             {
-                jogador_secundario.gameObject.SetActive(false);
+                JogadorSecundario.gameObject.SetActive(false);
             }
-            jogador_secundario = null;
+            JogadorSecundario = null;
             iniciou_dois_jogadores = false;
         }
         if (!socolinha.Ativo)
         {
-            if (jogador.name.ToLower().Contains("socolinha"))
+            if (Jogador.name.ToLower().Contains("socolinha"))
             {
-                jogador.gameObject.SetActive(false);
-                jogador = jogador_secundario;
+                Jogador.gameObject.SetActive(false);
+                Jogador = JogadorSecundario;
             }
             else
             {
-                jogador_secundario.gameObject.SetActive(false);
+                JogadorSecundario.gameObject.SetActive(false);
             }
             
-            jogador_secundario = null;
+            JogadorSecundario = null;
             iniciou_dois_jogadores = false;
         }
     }
-    public void mudar_secundario()
+    public void MudarSecundario()
     {
-        jogador_secundario.GetComponent<MovementController>().Ativo = false;
-        jogador_secundario.GetComponent<MovementController>().ColisaoPersonagem(false);
-        //jogador_secundario.GetComponent<MovementController>().mudar_Colliders(false);
-        //jogador_secundario.GetComponent<Rigidbody2D>().isKinematic = true;
-        //jogador_secundario.gameObject.tag = "PlayerS";
+        JogadorSecundario.GetComponent<MovementController>().Ativo = false;
+        JogadorSecundario.GetComponent<MovementController>().ColisaoPersonagem(false);
 
     }
-    public void mudar_primario()
+    public void MudarPrimario()
     {
-        jogador.GetComponent<MovementController>().Ativo = true;
-        jogador.GetComponent<MovementController>().ColisaoPersonagem(true);
-       // jogador.GetComponent<MovementController>().mudar_Colliders(true);
-        //jogador.GetComponent<Rigidbody2D>().isKinematic = false;
-       // jogador.gameObject.tag = "PlayerP";
+        Jogador.GetComponent<MovementController>().Ativo = true;
+        Jogador.GetComponent<MovementController>().ColisaoPersonagem(true);
 
     }
     private void Acordar()
     {
         if (Application.loadedLevelName == nome_cena)
         {
-            Game_Player.game_player.mudar_valores = true;
+            Game_Player.instancia.mudar_valores = true;
         }
         else
         {
-            Game_Player.game_player.mudar_valores = false;
+            Game_Player.instancia.mudar_valores = false;
         }
     }
     public void ZerarVariaveis()
@@ -464,7 +441,7 @@ public class Game_Player : Game_Base
         sv.fornecerInformacao = FornecerInformacoes;
         sv.jaFoiInformado = JaFoiPerguntado;
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(caminho + "/" + game_player.GetType().Name + ".dat");
+        FileStream file = File.Create(caminho + "/" + instancia.GetType().Name + ".dat");
         bf.Serialize(file, sv);
 		file.Close();
     }
@@ -489,13 +466,13 @@ public class Game_Player : Game_Base
     }
     public bool Carregar()
     {
-        if (File.Exists(Application.persistentDataPath + "/" + game_player.Pegar_Tipo() + ".dat"))
+        if (File.Exists(Application.persistentDataPath + "/" + instancia.Pegar_Tipo() + ".dat"))
         {
 
             BinaryFormatter bf = new BinaryFormatter();
             try
             {
-                FileStream file = File.Open(Application.persistentDataPath + "/" + game_player.Pegar_Tipo() + ".dat", FileMode.Open);
+                FileStream file = File.Open(Application.persistentDataPath + "/" + instancia.Pegar_Tipo() + ".dat", FileMode.Open);
                 SalvarJogador sv = (SalvarJogador)bf.Deserialize(file);
                 if (SalvarJogador.compararVersao(sv))
                 {
@@ -564,12 +541,12 @@ public class Game_Player : Game_Base
     }
     public void ReiniciarPosicoesJogadores(Vector3 posicao)
     {
-        jogador.position = posicao;
-        if (jogador_secundario != null)
+        Jogador.position = posicao;
+        if (JogadorSecundario != null)
         {
             esperar_grounded = true;
-            //jogador_secundario.gameObject.SetActive(false);
-            jogador_secundario.position = posicao;
+            //JogadorSecundario.gameObject.SetActive(false);
+            JogadorSecundario.position = posicao;
         }
     }
     /// <summary>
@@ -583,7 +560,7 @@ public class Game_Player : Game_Base
             reniciar();
         }
         definir_habilidade_atual();
-        if (jogador_secundario != null)
+        if (JogadorSecundario != null)
         {
             alterar_jogador_secundario();
         }
@@ -618,9 +595,9 @@ public class Game_Player : Game_Base
         {
             esperar_segunda_distancia = false;
         }
-        if (esperar_grounded && jogador.GetComponent<MovementController>().grounded && !em_habilidade)
+        if (esperar_grounded && Jogador.GetComponent<MovementController>().grounded && !em_habilidade)
         {
-            jogador_secundario.gameObject.SetActive(true);
+            JogadorSecundario.gameObject.SetActive(true);
             resetar_posicoes(it);
             esperar_grounded = false;
         }
@@ -631,8 +608,8 @@ public class Game_Player : Game_Base
     }
     private bool verificar_distancia_esperar(float it)
     {
-        return ((jogador.position.x - jogador_secundario.position.x <= distancia_reversa_jogadores.x && it == 1) ||
-            (jogador.position.x - jogador_secundario.position.x >= -distancia_reversa_jogadores.x &&
+        return ((Jogador.position.x - JogadorSecundario.position.x <= distancia_reversa_jogadores.x && it == 1) ||
+            (Jogador.position.x - JogadorSecundario.position.x >= -distancia_reversa_jogadores.x &&
              it != 1));
     }
 	public void resetar_jogador()
@@ -640,15 +617,15 @@ public class Game_Player : Game_Base
 		if (jogador_morto != null) {
 			return;
 		}
-		Vector3 posicao = new Vector3(jogador.position.x,
-		                              jogador.position.y, jogador.position.z);
-		jogador_secundario.position = posicao;
+		Vector3 posicao = new Vector3(Jogador.position.x,
+		                              Jogador.position.y, Jogador.position.z);
+		JogadorSecundario.position = posicao;
 	}
     private void resetar_posicoes(float i)
     {
-        Vector3 posicao = new Vector3(jogador.position.x - i*distancia_reset.x,
-            jogador.position.y, jogador.position.z);
-        jogador_secundario.position = posicao;
+        Vector3 posicao = new Vector3(Jogador.position.x - i*distancia_reset.x,
+            Jogador.position.y, Jogador.position.z);
+        JogadorSecundario.position = posicao;
     }
     public void AdicionarNivel(int indice, Nivel nivel)
     {
@@ -699,15 +676,15 @@ public class Game_Player : Game_Base
 
     public void AcionarSegundoJogador()
     {
-        if(!segundo_jogador_acionado && Jogador_S != null)
+        if(!segundo_jogador_acionado && JogadorSecundario != null)
         {
             segundo_jogador_acionado = true;
-            jogador_morto = jogador;
-            jogador = jogador_secundario;
-            jogador_secundario = null;
-            movimentos = jogador.GetComponent<MovementController>();
+            jogador_morto = Jogador;
+            Jogador = JogadorSecundario;
+            JogadorSecundario = null;
+            movimentos = Jogador.GetComponent<MovementController>();
             movimentos.DeixarInvencivel();
-            mudar_primario();
+            MudarPrimario();
         }
     }
 
@@ -720,7 +697,7 @@ public class Game_Player : Game_Base
     }
     public bool PodeTrocar()
     {
-        if (iniciou_dois_jogadores && jogador_secundario != null)
+        if (iniciou_dois_jogadores && JogadorSecundario != null)
         {
             return true;
         }
@@ -737,14 +714,14 @@ public class Game_Player : Game_Base
     {
         if (jogador_morto != null)
         {
-            jogador_secundario = jogador;
-            jogador = jogador_morto;
-            resetar_jogador(jogador_secundario);
-            mudar_secundario();
+            JogadorSecundario = Jogador;
+            Jogador = jogador_morto;
+            resetar_jogador(JogadorSecundario);
+            MudarSecundario();
         }
-        resetar_jogador(jogador);
-        movimentos = jogador.GetComponent<MovementController>();
-        mudar_primario();
+        resetar_jogador(Jogador);
+        movimentos = Jogador.GetComponent<MovementController>();
+        MudarPrimario();
         jogador_morto = null;
         segundo_jogador_acionado = false;
     }
@@ -761,7 +738,7 @@ public class Game_Player : Game_Base
 		}
          * */
 		try {
-			if (!jogador_morto.Equals(jogador) && jogador_morto != null && jogador_hit.Equals(jogador))
+			if (!jogador_morto.Equals(Jogador) && jogador_morto != null && jogador_hit.Equals(Jogador))
             {
 				return true;
             };
@@ -773,7 +750,7 @@ public class Game_Player : Game_Base
     }
 	public bool VerificarSeEhPrincipal(Transform jogador_esc)
 	{
-		if ((jogador_esc == jogador) ) {
+		if ((jogador_esc == Jogador) ) {
 			return true;
 		}
 		return false;
@@ -793,14 +770,14 @@ public class Game_Player : Game_Base
         if (movimentos.FimIdleAnimacao())
         {
             suspender_camera = true;
-            jogador_secundario.transform.position =
-            jogador_secundario.GetComponent<MovementController>().ResetarPosicao().position;
-            jogador.transform.position =
-            jogador.GetComponent<MovementController>().ResetarPosicao().position;
-            jogador_secundario.GetComponent<Animator>().enabled = false;
-            jogador.GetComponent<Animator>().enabled = false;
-            jogador.GetComponent<MovementController>().ResetarPosicaoBody();
-            jogador_secundario.GetComponent<MovementController>().ResetarPosicaoBody();
+            JogadorSecundario.transform.position =
+            JogadorSecundario.GetComponent<MovementController>().ResetarPosicao().position;
+            Jogador.transform.position =
+            Jogador.GetComponent<MovementController>().ResetarPosicao().position;
+            JogadorSecundario.GetComponent<Animator>().enabled = false;
+            Jogador.GetComponent<Animator>().enabled = false;
+            Jogador.GetComponent<MovementController>().ResetarPosicaoBody();
+            JogadorSecundario.GetComponent<MovementController>().ResetarPosicaoBody();
             finalizar_reset_animacao();
             
         }
@@ -811,20 +788,20 @@ public class Game_Player : Game_Base
     }
     private void finalizar_reset_animacao()
     {
-        jogador_secundario.GetComponent<Animator>().SetBool("TrocaIn", false);
-        jogador.GetComponent<Animator>().SetBool("TrocaOut", false);
-        jogador.GetComponent<Animator>().Play("Idle");
-        jogador_secundario.GetComponent<Animator>().Play("Idle");
-        jogador_secundario.GetComponent<Animator>().enabled = true;
-        jogador.GetComponent<Animator>().enabled = true;
+        JogadorSecundario.GetComponent<Animator>().SetBool("TrocaIn", false);
+        Jogador.GetComponent<Animator>().SetBool("TrocaOut", false);
+        Jogador.GetComponent<Animator>().Play("Idle");
+        JogadorSecundario.GetComponent<Animator>().Play("Idle");
+        JogadorSecundario.GetComponent<Animator>().enabled = true;
+        Jogador.GetComponent<Animator>().enabled = true;
     }
     public void finalizando_troca()
     {
 		apertou_botao_troca = true;
-		Transform trocar_jogador = jogador;
-        jogador = jogador_secundario;
-        jogador_secundario = trocar_jogador;
-        movimentos = jogador.GetComponent<MovementController>();
+		Transform trocar_jogador = Jogador;
+        Jogador = JogadorSecundario;
+        JogadorSecundario = trocar_jogador;
+        movimentos = Jogador.GetComponent<MovementController>();
 		alternar_personagens ();
         pd_finalizar_troca = false;
         suspender_camera = false;
@@ -832,12 +809,12 @@ public class Game_Player : Game_Base
     }
 	public void alternar_personagens()
 	{
-		mudar_primario();
-		mudar_secundario();
+		MudarPrimario();
+		MudarSecundario();
 	}
     public void trocar_personagens()
     {
-        //jogador.position = jogador_secundario.position;
+        //Jogador.position = JogadorSecundario.position;
 		if (!iniciou_dois_jogadores) {
 			return;
 		}
@@ -848,23 +825,23 @@ public class Game_Player : Game_Base
         };
         if (verificar_distancia_esperar(it))
         {
-            if ((it == 1 && jogador.position.x - jogador_secundario.position.x < 0) ||
-                (it == -1 && jogador.position.x - jogador_secundario.position.x > 0) )
+            if ((it == 1 && Jogador.position.x - JogadorSecundario.position.x < 0) ||
+                (it == -1 && Jogador.position.x - JogadorSecundario.position.x > 0) )
             {
                 movimentos.mudar_face();
-                jogador_secundario.GetComponent<MovementController>().mudar_face();
+                JogadorSecundario.GetComponent<MovementController>().mudar_face();
             }
         }
 
-        jogador_secundario.GetComponent<Animator>().SetBool("TrocaIn", true);
-        jogador.GetComponent<Animator>().SetBool("TrocaOut", true);
-        jogador_secundario.GetComponent<Animator>().Play("Idle_back");
-        jogador.GetComponent<Animator>().Play("Idle_front");
-        //jogador_secundario.GetComponent<MovementController>().mudar_Colliders(false);
-        //jogador.GetComponent<MovementController>().mudar_Colliders(false);
-        jogador_secundario.GetComponent<MovementController>().ColisaoPersonagem(false);
-        jogador.GetComponent<MovementController>().ColisaoPersonagem(true);
-        movimentos = jogador.GetComponent<MovementController>();
+        JogadorSecundario.GetComponent<Animator>().SetBool("TrocaIn", true);
+        Jogador.GetComponent<Animator>().SetBool("TrocaOut", true);
+        JogadorSecundario.GetComponent<Animator>().Play("Idle_back");
+        Jogador.GetComponent<Animator>().Play("Idle_front");
+        //JogadorSecundario.GetComponent<MovementController>().mudar_Colliders(false);
+        //Jogador.GetComponent<MovementController>().mudar_Colliders(false);
+        JogadorSecundario.GetComponent<MovementController>().ColisaoPersonagem(false);
+        Jogador.GetComponent<MovementController>().ColisaoPersonagem(true);
+        movimentos = Jogador.GetComponent<MovementController>();
 
     }
     /// <summary>
@@ -876,14 +853,14 @@ public class Game_Player : Game_Base
         {
             return;
         }
-        if (jogador.name == "Socolinha")
+        if (Jogador.name == "Socolinha")
         {
             if (Habilidade_Atual.nome == "Mover")
             {
 
                 if (VerificarBotaoApertado())
                 {
-                    if (!jogador.GetComponent<Animator>().GetBool("Empurrando"))
+                    if (!Jogador.GetComponent<Animator>().GetBool("Empurrando"))
                     {
                         movimentos.IniciarEmpurrando();
                     }
@@ -964,13 +941,13 @@ public class Game_Player : Game_Base
 
     private static bool VerificarBotaoApertado()
     {
-        if (!Input.GetKey(Game_Player.game_player.Teclas["habilidade"]) &&
-            !Input.GetKeyUp(Game_Player.game_player.Teclas["habilidade"]))
+        if (!Input.GetKey(Game_Player.instancia.Teclas["habilidade"]) &&
+            !Input.GetKeyUp(Game_Player.instancia.Teclas["habilidade"]))
         {
             return false;
         }
-        return !Input.GetKeyUp(Game_Player.game_player.Teclas["habilidade"]) ||
-                        Input.GetKeyDown(Game_Player.game_player.Teclas["habilidade"]);
+        return !Input.GetKeyUp(Game_Player.instancia.Teclas["habilidade"]) ||
+                        Input.GetKeyDown(Game_Player.instancia.Teclas["habilidade"]);
     }
 
     private void TerminarHabilidade()
@@ -1009,7 +986,7 @@ public class Game_Player : Game_Base
         {
             return;
         }
-		if (jogador.name == "Socolinha") {
+		if (Jogador.name == "Socolinha") {
             if (Habilidade_Atual.nome == "Mover")
             {
                 if (movimentos.PoderPararMover())
@@ -1024,7 +1001,7 @@ public class Game_Player : Game_Base
                     pausar_jogadores = false;
                     movimentos.FinalizarHabilidades();
                     em_habilidade = false;
-                    Game_Player.game_player.Movimento_Atual.HabilidadeDescer(false);
+                    Game_Player.instancia.Movimento_Atual.HabilidadeDescer(false);
 
             }
             else{
@@ -1063,14 +1040,14 @@ public class Game_Player : Game_Base
 
     private void Musica()
     {
-        Destroy((GameObject)Instantiate(socolinha.habilidade_Musica, jogador.position,
+        Destroy((GameObject)Instantiate(socolinha.habilidade_Musica, Jogador.position,
             socolinha.habilidade_Musica.transform.rotation), socolinha.tempo_entre_notas);
 
     }
 
     public bool pode_atirar(GameObject gameObject)
     {
-        if (gameObject.transform == jogador_secundario)
+        if (gameObject.transform == JogadorSecundario)
         {
             return false;
         }
@@ -1087,16 +1064,16 @@ public class Game_Player : Game_Base
     public void IniciarHabilidades()
     {
         em_habilidade = true;
-        if (jogador.name == "Socolinha")
+        if (Jogador.name == "Socolinha")
         {
             
             switch (habilidade_atual.nome)
             {
                 case "Mover":
-                    Game_Player.game_player.Movimento_Atual.IniciarEmpurrando();
+                    Game_Player.instancia.Movimento_Atual.IniciarEmpurrando();
                     break;
                 case "Descer":
-                    Game_Player.game_player.Movimento_Atual.HabilidadeDescer(true);
+                    Game_Player.instancia.Movimento_Atual.HabilidadeDescer(true);
                     break;
                 case "Song":
                     socolinha.Duracao_Musica_Parcial = socolinha.tempo_entre_notas;
@@ -1109,7 +1086,7 @@ public class Game_Player : Game_Base
                     movimentos.IniciarFlorescer();
                     break;
             }
-        }else if (jogador.name == "Primitivo")
+        }else if (Jogador.name == "Primitivo")
         {
             if (Habilidade_Atual.nome == "Cavucar")
             {
@@ -1134,15 +1111,15 @@ public class Game_Player : Game_Base
     public void iniciar_Habilidades(string habilidade)
     {
         em_habilidade = true;
-        if (jogador.name.Contains("Socolinha"))
+        if (Jogador.name.Contains("Socolinha"))
         {
             switch (habilidade)
             {
                 case "Mover" :
-                    Game_Player.game_player.Movimento_Atual.IniciarEmpurrando();
+                    Game_Player.instancia.Movimento_Atual.IniciarEmpurrando();
                     break;
                 case "Descer":
-                    Game_Player.game_player.Movimento_Atual.HabilidadeDescer(true);
+                    Game_Player.instancia.Movimento_Atual.HabilidadeDescer(true);
                     break;
                 default:
                     break;
@@ -1157,7 +1134,7 @@ public class Game_Player : Game_Base
     }
     private void definir_habilidade_atual()
     {
-        if (jogador == null)
+        if (Jogador == null)
         {
             return;
         }
@@ -1170,13 +1147,13 @@ public class Game_Player : Game_Base
 		/*
         if (habilidade_atual != null)
         {
-            if (habilidade_antiga.Equals(habilidade_atual.nome) && jogador.name.Equals(jogador_antigo))
+            if (habilidade_antiga.Equals(habilidade_atual.nome) && Jogador.name.Equals(jogador_antigo))
             {
                 return;
             }
         }
         habilidade_atual = new Habilidade();
-        if (jogador.name == "Socolinha")
+        if (Jogador.name == "Socolinha")
         {
             jogador_antigo = "Socolinha";
             for (int i = 0; i < socolinha.habilidades.Length;i++ )
@@ -1263,22 +1240,22 @@ public class Game_Player : Game_Base
         historias = new Boolean[999];
     }
     public void DefinicoesTeclas() {
-        Game_Player.game_player.Teclas = new Dictionary<string, KeyCode>();
-        Game_Player.game_player.Teclas.Add("pulo", KeyCode.Space);
-        Game_Player.game_player.Teclas.Add("direita", KeyCode.RightArrow);
-        Game_Player.game_player.Teclas.Add("esquerda", KeyCode.LeftArrow);
-        Game_Player.game_player.Teclas.Add("correr", KeyCode.LeftShift);
-        Game_Player.game_player.Teclas.Add("habilidade", KeyCode.Z);
-        Game_Player.game_player.Teclas.Add("troca", KeyCode.X);
-        Game_Player.game_player.Teclas.Add("enter", KeyCode.Return);
-        Game_Player.game_player.Teclas.Add("esc", KeyCode.Escape);
+        Game_Player.instancia.Teclas = new Dictionary<string, KeyCode>();
+        Game_Player.instancia.Teclas.Add("pulo", KeyCode.Space);
+        Game_Player.instancia.Teclas.Add("direita", KeyCode.RightArrow);
+        Game_Player.instancia.Teclas.Add("esquerda", KeyCode.LeftArrow);
+        Game_Player.instancia.Teclas.Add("correr", KeyCode.LeftShift);
+        Game_Player.instancia.Teclas.Add("habilidade", KeyCode.Z);
+        Game_Player.instancia.Teclas.Add("troca", KeyCode.X);
+        Game_Player.instancia.Teclas.Add("enter", KeyCode.Return);
+        Game_Player.instancia.Teclas.Add("esc", KeyCode.Escape);
         Game_Input.TranscreverControles();
 
     }
     private bool distancia_resetar()
     {
-        return ((Math.Abs(jogador.position.x - jogador_secundario.position.x) >= distancia_jogadores.x) ||
-            Math.Abs(jogador.position.y - jogador_secundario.position.y) >= distancia_jogadores.y);
+        return ((Math.Abs(Jogador.position.x - JogadorSecundario.position.x) >= distancia_jogadores.x) ||
+            Math.Abs(Jogador.position.y - JogadorSecundario.position.y) >= distancia_jogadores.y);
     }
     public bool pode_Parar_Seguir()
     {
@@ -1298,7 +1275,7 @@ public class Game_Player : Game_Base
     {
         PararHabilidades();
         habilidade_atual = null;
-        Game_Player.game_player.Habilidade_Ativa = false;
+        Game_Player.instancia.Habilidade_Ativa = false;
         foreach (Habilidade habilidade in socolinha.habilidades)
         {
             habilidade.Escolhida = false;
@@ -1308,7 +1285,7 @@ public class Game_Player : Game_Base
     public void AtivarHabilidades(string p)
     {
         habilidade_atual = null;
-        Game_Player.game_player.Habilidade_Ativa = true;
+        Game_Player.instancia.Habilidade_Ativa = true;
         foreach (Habilidade habilidade in socolinha.habilidades)
         {
             if (!habilidade.nome.Contains(p))

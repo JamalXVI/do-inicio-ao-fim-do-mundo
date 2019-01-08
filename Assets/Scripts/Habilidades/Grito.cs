@@ -33,7 +33,7 @@ public class Grito : MonoBehaviour {
         MovementController mov = col.gameObject.GetComponentInParent<MovementController>();
         if (mov != null)
         {
-            if (mov.gameObject.Equals(Game_Player.game_player.Jogador.gameObject) && mov.gameObject.name.Contains("Primitivo"))
+            if (mov.gameObject.Equals(Game_Player.instancia.Jogador.gameObject) && mov.gameObject.name.Contains("Primitivo"))
             {
                 AtivarHabilidade(mov.transform);
             }
@@ -43,9 +43,9 @@ public class Grito : MonoBehaviour {
     }
     private void AtivarHabilidade(Transform col)
     {
-        Game_Player.game_player.AtivarHabilidades("Grito");
+        Game_Player.instancia.AtivarHabilidades("Grito");
         float total = distancia.x + this.GetComponent<BoxCollider2D>().size.x;
-        gerenciador.IniciarHabilidade(Game_Player.game_player.Jogador, this.transform, new Vector2(total,
+        gerenciador.IniciarHabilidade(Game_Player.instancia.Jogador, this.transform, new Vector2(total,
                     distancia.y), true);
     }
 

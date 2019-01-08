@@ -267,11 +267,11 @@ public class Game_Conquistas : MonoBehaviour {
         {
             AdicionarConquistaPontuacao();
         }
-        if (Game_Player.game_player.Moedas_Jogo + Game_Player.game_player.MoedasGastas >= 300)
+        if (Game_Player.instancia.Moedas_Jogo + Game_Player.instancia.MoedasGastas >= 300)
         {
             AdicionarConquistas(11);
         }
-        if (Game_Player.game_player.Moedas_Jogo + Game_Player.game_player.MoedasGastas >= 900)
+        if (Game_Player.instancia.Moedas_Jogo + Game_Player.instancia.MoedasGastas >= 900)
         {
             AdicionarConquistas(12);
         }

@@ -87,7 +87,7 @@ public class InimigoAguia : Game_Inimigo
             if (vivojog.vivo && !vivojog.invencivel)
             {
                 gerenciador.MatarPersonagem();
-                Game_Player.game_player.MatarJogador();
+                Game_Player.instancia.MatarJogador();
                 Game_Conquistas.instancia.AdicionarMortePorAnimais("aguia");
               //      Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), colisor.collider);
             }
@@ -108,10 +108,10 @@ public class InimigoAguia : Game_Inimigo
     }
     void AdicionarItem()
     {
-        if (Game_Player.game_player.quantidade_item[idItem] <= 0)
+        if (Game_Player.instancia.quantidade_item[idItem] <= 0)
         {
-            Game_Player.game_player.quantidade_item[idItem] += 1;
+            Game_Player.instancia.quantidade_item[idItem] += 1;
         }
-        Game_Player.game_player.QuantidadeInimigosFase++;
+        Game_Player.instancia.QuantidadeInimigosFase++;
     }
 }

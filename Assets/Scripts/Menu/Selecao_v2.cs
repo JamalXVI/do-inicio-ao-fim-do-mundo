@@ -51,8 +51,8 @@ public class Selecao_v2 : MonoBehaviour {
         string nome = item.name.Split('R')[0];
         string cod = item.name.Split('_')[1];
 
-		for (int i = 0; i < Game_Player.game_player.ordem_fases.Length; i++) {
-			if (nome == null || cod == null || Game_Player.game_player.ordem_fases [i] == null) {
+		for (int i = 0; i < Game_Player.instancia.ordem_fases.Length; i++) {
+			if (nome == null || cod == null || Game_Player.instancia.ordem_fases [i] == null) {
 				continue;
 			}
             /*
@@ -98,13 +98,13 @@ public class Selecao_v2 : MonoBehaviour {
         bool loop = false;
         string nome = item.name.Split('_')[0];
         string cod = item.name.Split('_')[1];
-        for (int i = 0; i < Game_Player.game_player.ordem_fases.Length; i++)
+        for (int i = 0; i < Game_Player.instancia.ordem_fases.Length; i++)
         {
-            if (nome == null || cod == null || Game_Player.game_player.ordem_fases[i] == null)
+            if (nome == null || cod == null || Game_Player.instancia.ordem_fases[i] == null)
             {
                 continue;
             }
-			if (Game_Player.game_player.VerificarSePassouFase(i) &&
+			if (Game_Player.instancia.VerificarSePassouFase(i) &&
                 i + 1 == int.Parse(nome) && cod.Contains("S") && !ativados.ContainsKey(item))
             {
                 indice_maximo = i + 1;
@@ -122,7 +122,7 @@ public class Selecao_v2 : MonoBehaviour {
 
                 }
             }
-			if (Game_Player.game_player.VerificarSePassouFase(i) &&
+			if (Game_Player.instancia.VerificarSePassouFase(i) &&
                 i + 1 == int.Parse(nome) && cod.Contains("L") && !trancados.ContainsKey(item))
             {
                 trancados.Add(item, true);
@@ -160,12 +160,12 @@ public class Selecao_v2 : MonoBehaviour {
     }
     public void Clicar_01()
     {
-        Application.LoadLevel(Game_Player.game_player.ordem_fases[0]);
+        Application.LoadLevel(Game_Player.instancia.ordem_fases[0]);
     }
     public void Clicar_02()
     {
-        Game_Player.game_player.PodeReiniciar = true;
-        Game_Player.game_player.Parar_Jogador = false;
-        Application.LoadLevel(Game_Player.game_player.ordem_fases[1]);
+        Game_Player.instancia.PodeReiniciar = true;
+        Game_Player.instancia.Parar_Jogador = false;
+        Application.LoadLevel(Game_Player.instancia.ordem_fases[1]);
     }
 }

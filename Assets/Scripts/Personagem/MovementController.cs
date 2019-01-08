@@ -149,23 +149,23 @@ public class MovementController : MonoBehaviour
 	void EnquantoUsaHabilidade()
 	{
         //Input.GetAxis ("Fire1") > 0
-        if (!Game_Player.game_player.Habilidade_Atual.nome.Equals("Mover"))
+        if (!Game_Player.instancia.Habilidade_Atual.nome.Equals("Mover"))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0f, GetComponent<Rigidbody2D>().velocity.y);
             anim.SetFloat("Speed", 0f);
         }
-        if (Input.GetKeyUp(Game_Player.game_player.Teclas["habilidade"])) {
+        if (Input.GetKeyUp(Game_Player.instancia.Teclas["habilidade"])) {
 			if(contador_habilidades > delay_cancelar_habilidade)
 			{
 				contador_habilidades = 0f;
-                if (!Game_Player.game_player.Habilidade_Atual.nome.Equals("Descer"))
+                if (!Game_Player.instancia.Habilidade_Atual.nome.Equals("Descer"))
                 {
-				    Game_Player.game_player.PararHabilidades();
+				    Game_Player.instancia.PararHabilidades();
                     
                 }
 			}
 		}
-        Game_Player.game_player.GerarHabilidade();
+        Game_Player.instancia.GerarHabilidade();
         
 	}
 	
@@ -256,7 +256,7 @@ public class MovementController : MonoBehaviour
                     c.collider.transform.position.y > c.otherCollider.transform.position.y + c.otherCollider.bounds.size.y/5
                     && VerificarPosicaoXArvore(c, col))
                 {
-                    if (GetComponent<MovementController>() != Game_Player.game_player.Movimento_Atual)
+                    if (GetComponent<MovementController>() != Game_Player.instancia.Movimento_Atual)
                     {
                         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                         Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), col.collider);
@@ -266,7 +266,7 @@ public class MovementController : MonoBehaviour
                         if (vivo && !invencivel)
                         {
                             gerenciador.MatarPersonagem();
-                            Game_Player.game_player.MatarJogador();
+                            Game_Player.instancia.MatarJogador();
                             Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), col.collider);
                         }
                     }
@@ -386,22 +386,22 @@ public class MovementController : MonoBehaviour
 
     private void HabilidadesEspeciais()
     {
-        if (Game_Player.game_player.Movimento_Atual != this) {
+        if (Game_Player.instancia.Movimento_Atual != this) {
             return;
           };
-        Game_Player.game_player.GerarHabilidade();
+        Game_Player.instancia.GerarHabilidade();
         //Input.GetAxis("Fire2"
-        if (Input.GetKey(Game_Player.game_player.Teclas["habilidade"]))
+        if (Input.GetKey(Game_Player.instancia.Teclas["habilidade"]))
         {
             FinalizarHabilidadeLevantar();
         }
-        if (Input.GetKey(Game_Player.game_player.Teclas["troca"]))
+        if (Input.GetKey(Game_Player.instancia.Teclas["troca"]))
         {
-            if (Game_Player.game_player.Parar_Seguir && Game_Player.game_player.PodeTrocar() &&
-               !Game_Player.game_player.apertou_botao_troca)
+            if (Game_Player.instancia.Parar_Seguir && Game_Player.instancia.PodeTrocar() &&
+               !Game_Player.instancia.apertou_botao_troca)
             {
                 SoundManager.instance.PlayPersonagens(somTrocarPersonagem);
-                Game_Player.game_player.finalizando_troca();
+                Game_Player.instancia.finalizando_troca();
                 return;
             }
         }
@@ -433,11 +433,11 @@ public class MovementController : MonoBehaviour
             return 0;
         }
         float move = 0;
-        if (Input.GetKey(Game_Player.game_player.Teclas["direita"]))
+        if (Input.GetKey(Game_Player.instancia.Teclas["direita"]))
         {
             move = 1;
         }
-        if (Input.GetKey(Game_Player.game_player.Teclas["esquerda"]))
+        if (Input.GetKey(Game_Player.instancia.Teclas["esquerda"]))
         {
             move = -1;
         }
@@ -471,7 +471,7 @@ public class MovementController : MonoBehaviour
         }
 
         //if (Input.GetAxisRaw("Jump") != 0)
-        if (Input.GetKey(Game_Player.game_player.Teclas["pulo"]))
+        if (Input.GetKey(Game_Player.instancia.Teclas["pulo"]))
         {
             ForcaPular();
             AcaoPular();
@@ -524,37 +524,37 @@ public class MovementController : MonoBehaviour
     private void VerificarTrocaPersonagensChao(float move)
     {
         //Input.GetAxis("Fire2"
-        if (Input.GetKey(Game_Player.game_player.Teclas["troca"])
+        if (Input.GetKey(Game_Player.instancia.Teclas["troca"])
         && anim.GetCurrentAnimatorStateInfo(0).nameHash == idle && move == 0)
         {
 
-            if (Game_Player.game_player.Parar_Seguir && Game_Player.game_player.PodeTrocar() &&
-               !Game_Player.game_player.apertou_botao_troca)
+            if (Game_Player.instancia.Parar_Seguir && Game_Player.instancia.PodeTrocar() &&
+               !Game_Player.instancia.apertou_botao_troca)
             {
                 SoundManager.instance.PlayPersonagens(somTrocarPersonagem);
-                Game_Player.game_player.finalizando_troca();
+                Game_Player.instancia.finalizando_troca();
                 return;
             }
-            else if (Game_Player.game_player.pode_Parar_Seguir() && Game_Player.game_player.Parar_Seguir)
+            else if (Game_Player.instancia.pode_Parar_Seguir() && Game_Player.instancia.Parar_Seguir)
             {
-                Game_Player.game_player.Parar_Seguir = false;
+                Game_Player.instancia.Parar_Seguir = false;
             }
-            else if (Game_Player.game_player.PodeTrocar() && !Game_Player.game_player.Parar_Seguir)
+            else if (Game_Player.instancia.PodeTrocar() && !Game_Player.instancia.Parar_Seguir)
             {
-                Game_Player.game_player.trocar_personagens();
+                Game_Player.instancia.trocar_personagens();
                 return;
             }
         }
         //0 >= Input.GetAxis("Fire2")
-        else if (!Input.GetKey(Game_Player.game_player.Teclas["troca"]) && Game_Player.game_player.apertou_botao_troca)
+        else if (!Input.GetKey(Game_Player.instancia.Teclas["troca"]) && Game_Player.instancia.apertou_botao_troca)
         {
-            Game_Player.game_player.apertou_botao_troca = false;
+            Game_Player.instancia.apertou_botao_troca = false;
         }
     }
     private void VerificarHabilidadePersonagemChao(float move)
     {
         //Input.GetAxis("Fire1") > 0
-        if (Input.GetKey(Game_Player.game_player.Teclas["habilidade"])) //&& move == 0)//anim.GetCurrentAnimatorStateInfo(0).nameHash == idle
+        if (Input.GetKey(Game_Player.instancia.Teclas["habilidade"])) //&& move == 0)//anim.GetCurrentAnimatorStateInfo(0).nameHash == idle
         {
             PararAndar();
             IniciarHabilidades();
@@ -577,14 +577,14 @@ public class MovementController : MonoBehaviour
     {
         anim.SetBool("Correndo", false);
         velocidade_maxima = maxSpeed;
-        Game_Player.game_player.Correr = false;
+        Game_Player.instancia.Correr = false;
         correr_correndo = false;
         terminar_correr = false;
     }
     private void IniciarCorrer()
     {
         anim.SetBool("Correndo", true);
-        Game_Player.game_player.Correr = true;
+        Game_Player.instancia.Correr = true;
         velocidade_maxima = (float)1.5 * maxSpeed;
         correr_inicou = false;
         correr_correndo = true;
@@ -594,7 +594,7 @@ public class MovementController : MonoBehaviour
     {
         correr_tempo_maximo = correr_tempo_teclas_frames;
 
-        if (Game_Player.game_player.Correr)
+        if (Game_Player.instancia.Correr)
         {
             IniciarCorrer();
         }
@@ -628,17 +628,17 @@ public class MovementController : MonoBehaviour
         //        correr_inicou = false;
         //    }
         //}
-        if (Input.GetKeyDown(Game_Player.game_player.Teclas["correr"]) || Input.GetKey(Game_Player.game_player.Teclas["correr"]))
+        if (Input.GetKeyDown(Game_Player.instancia.Teclas["correr"]) || Input.GetKey(Game_Player.instancia.Teclas["correr"]))
         {
             IniciarCorrer();
         }
-        else if(Input.GetKeyUp(Game_Player.game_player.Teclas["correr"]))
+        else if(Input.GetKeyUp(Game_Player.instancia.Teclas["correr"]))
         {
             FinalizarCorrer();
         }
         //Mathf.Abs(Input.GetAxis("Horizontal")) < 0.5
         //Mathf.Abs(Input.GetAxis("Horizontal"))  <= 0
-        if (!(Input.GetKey(Game_Player.game_player.Teclas["direita"]) || Input.GetKey(Game_Player.game_player.Teclas["esquerda"]))
+        if (!(Input.GetKey(Game_Player.instancia.Teclas["direita"]) || Input.GetKey(Game_Player.instancia.Teclas["esquerda"]))
          && anim.GetBool("Correndo") &&
         correr_correndo == true)
         {
@@ -655,8 +655,8 @@ public class MovementController : MonoBehaviour
     {
         //0 >= Input.GetAxis("Fire2") && 0 >= Input.GetAxis("Fire1")
         if (anim.GetCurrentAnimatorStateInfo(0).nameHash == idle &&
-            !Input.GetKey(Game_Player.game_player.Teclas["habilidade"]) &&
-            !Input.GetKey(Game_Player.game_player.Teclas["troca"])
+            !Input.GetKey(Game_Player.instancia.Teclas["habilidade"]) &&
+            !Input.GetKey(Game_Player.instancia.Teclas["troca"])
             )
         {
             tempo_parado += Time.deltaTime;
@@ -667,9 +667,9 @@ public class MovementController : MonoBehaviour
     }
     private void VerificarPausarJogo()
     {
-        if (Input.GetKey(Game_Player.game_player.Teclas["esc"]))
+        if (Input.GetKey(Game_Player.instancia.Teclas["esc"]))
         {
-            if ((Game_Player.game_player.Jogador == this.transform))
+            if ((Game_Player.instancia.Jogador == this.transform))
             {
                 if (contar_pausar <= 0)
                 {
@@ -688,7 +688,7 @@ public class MovementController : MonoBehaviour
     private bool ConsiderarPausa()
     {
         contador_habilidades += Time.deltaTime;
-        if (VerificarLevantado() && Game_Player.game_player.Movimento_Atual == this)
+        if (VerificarLevantado() && Game_Player.instancia.Movimento_Atual == this)
         {
             return true;
         }
@@ -697,7 +697,7 @@ public class MovementController : MonoBehaviour
             EnquantoUsaHabilidade();
             return true;
         }
-        if (Game_Player.game_player.Pausar_jogadores)
+        if (Game_Player.instancia.Pausar_jogadores)
         {
             return true;
         }
@@ -713,7 +713,7 @@ public class MovementController : MonoBehaviour
     }
     private bool VerificarUsandoHabilidade()
     {
-        if (Game_Player.game_player.Movimento_Atual != this)
+        if (Game_Player.instancia.Movimento_Atual != this)
         {
             return false;
         }
@@ -727,9 +727,9 @@ public class MovementController : MonoBehaviour
     }
     public bool VerificarPararJogador()
     {
-        if (gerenciador.parar_jogador || Game_Player.game_player.Parar_Jogador ||
-            (Game_Player.game_player.esperar_segunda_distancia && (Game_Player.game_player.Jogador != this.transform))
-           || (Game_Player.game_player.Parar_Seguir && (Game_Player.game_player.Jogador != this.transform)))
+        if (gerenciador.parar_jogador || Game_Player.instancia.Parar_Jogador ||
+            (Game_Player.instancia.esperar_segunda_distancia && (Game_Player.instancia.Jogador != this.transform))
+           || (Game_Player.instancia.Parar_Seguir && (Game_Player.instancia.Jogador != this.transform)))
         {
             if (anim.GetFloat("Speed") > 0)
             {
@@ -749,7 +749,7 @@ public class MovementController : MonoBehaviour
             if (anim.GetCurrentAnimatorStateInfo(0).nameHash == troca_in_front ||
                 anim.GetCurrentAnimatorStateInfo(0).nameHash == troca_out_back)
             {
-                Game_Player.game_player.finalizar_troca();
+                Game_Player.instancia.finalizar_troca();
             }
             return true;
 
@@ -763,17 +763,17 @@ public class MovementController : MonoBehaviour
     /// </summary>
     private void IniciarHabilidades()
     {
-        if (!Game_Player.game_player.Habilidade_Ativa)
+        if (!Game_Player.instancia.Habilidade_Ativa)
         {
             return;
         }
-        if (Game_Player.game_player.pode_atirar(this.gameObject) && contador_habilidades > delay_cancelar_habilidade)
+        if (Game_Player.instancia.pode_atirar(this.gameObject) && contador_habilidades > delay_cancelar_habilidade)
         {
             iniciou_habilidades = true;
             contador_habilidades = 0;
             anim.SetBool("Ataque01", true);
-            Game_Player.game_player.Pausar_jogadores = true;
-            Game_Player.game_player.IniciarHabilidades();
+            Game_Player.instancia.Pausar_jogadores = true;
+            Game_Player.instancia.IniciarHabilidades();
         }
     }
     
@@ -1060,11 +1060,11 @@ public void MoverEmpurrando()
     {
         //Input.GetAxis("Horizontal")
         float move = 0;
-        if (Input.GetKey(Game_Player.game_player.Teclas["direita"]))
+        if (Input.GetKey(Game_Player.instancia.Teclas["direita"]))
         {
             move = 1;
         }
-        if (Input.GetKey(Game_Player.game_player.Teclas["esquerda"]))
+        if (Input.GetKey(Game_Player.instancia.Teclas["esquerda"]))
         {
             move = -1;
         }
@@ -1184,7 +1184,7 @@ public bool PoderPararMover()
 {
         //float move = Input.GetAxis("Horizontal");
         //return Mathf.Abs(move) < 0.1f;
-        return !(Input.GetKey(Game_Player.game_player.Teclas["direita"]) || Input.GetKey(Game_Player.game_player.Teclas["esquerda"]));
+        return !(Input.GetKey(Game_Player.instancia.Teclas["direita"]) || Input.GetKey(Game_Player.instancia.Teclas["esquerda"]));
 }
 
 public void ignorar_colisao_personagens(GameObject objeto, bool valor)
@@ -1201,7 +1201,7 @@ public void HabilidadeDescer(bool iniciou)
    
    if (iniciou)
    {
-       Game_Player.game_player.Jogador.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 30);
+       Game_Player.instancia.Jogador.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 30);
        gerenciador.corpo_habilidade.GetComponent<Plataforma_Descer>().SumirColider(this.transform.Find("Colliders").gameObject);
       // Game_Player.game_player.Jogador_S.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 30);
    }

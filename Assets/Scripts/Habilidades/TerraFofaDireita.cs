@@ -73,10 +73,10 @@ public class TerraFofaDireita : MonoBehaviour
     }
     private void IniciarHabilidade(string habilidade)
     {
-        Game_Player.game_player.AtivarHabilidades(habilidade);
+        Game_Player.instancia.AtivarHabilidades(habilidade);
         float total = distancia_cancelar.x + this.GetComponent<BoxCollider2D>().size.x;
         float totaly = distancia_cancelar.y + this.GetComponent<BoxCollider2D>().size.y;
-        gerenciador.IniciarHabilidade(Game_Player.game_player.Jogador, this.transform, new Vector2(total,
+        gerenciador.IniciarHabilidade(Game_Player.instancia.Jogador, this.transform, new Vector2(total,
             totaly), false);
     }
     private bool CondicaoVerificarContato(Collision2D col)
@@ -85,7 +85,7 @@ public class TerraFofaDireita : MonoBehaviour
     }
     private bool CondicaoIniciarHabilidade(string personagem, Collision2D col)
     {
-        if (col.gameObject.Equals(Game_Player.game_player.Jogador.gameObject) && col.gameObject.name.Contains(personagem))
+        if (col.gameObject.Equals(Game_Player.instancia.Jogador.gameObject) && col.gameObject.name.Contains(personagem))
         {
             return true;
         }
@@ -93,7 +93,7 @@ public class TerraFofaDireita : MonoBehaviour
     }
     void OnCollisionExit2D(Collision2D col)
     {
-        if (col.gameObject.Equals(Game_Player.game_player.Jogador.gameObject)
+        if (col.gameObject.Equals(Game_Player.instancia.Jogador.gameObject)
          && col.gameObject.name.Contains("Primitivo"))
         {
             PararHabilidades();
@@ -102,9 +102,9 @@ public class TerraFofaDireita : MonoBehaviour
     private void PararHabilidades()
     {
         //Corrigir o erro da caixa caindo no abismo;
-        if (Game_Player.game_player.Habilidade_Atual != null)
+        if (Game_Player.instancia.Habilidade_Atual != null)
         {
-            Game_Player.game_player.PararHabilidades();
+            Game_Player.instancia.PararHabilidades();
         }
     }
     public void FazerCavucar()

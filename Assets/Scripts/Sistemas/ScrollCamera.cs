@@ -33,17 +33,17 @@ public class ScrollCamera : MonoBehaviour
     // Update is called once per frame
 	private void movimentar_parado()
 	{
-		float tempo = Game_Player.game_player.tempo_espera_camera_movimento;
+		float tempo = Game_Player.instancia.tempo_espera_camera_movimento;
 		int dir = 1;
-		if (!Game_Player.game_player.Movimento_Atual.Direita) {
+		if (!Game_Player.instancia.Movimento_Atual.Direita) {
 			dir *= -1;
 		}
-		if (Game_Player.game_player.distancia_max_camera.x >=
-			(transform.position.x - Game_Player.game_player.Jogador.position.x)*dir
+		if (Game_Player.instancia.distancia_max_camera.x >=
+			(transform.position.x - Game_Player.instancia.Jogador.position.x)*dir
 		    ) {
 			if (!camera_rev) {
 				
-				transform.position += new Vector3(dir*Game_Player.game_player.velocidade_camera_parado,0,0);
+				transform.position += new Vector3(dir*Game_Player.instancia.velocidade_camera_parado,0,0);
 			}
 		}else{
 			if (tempo_m >= tempo) {
@@ -53,9 +53,9 @@ public class ScrollCamera : MonoBehaviour
 				tempo_m += Time.deltaTime;
 			}
 		}
-		if ((transform.position.x - Game_Player.game_player.Jogador.position.x)*dir > 0) {
+		if ((transform.position.x - Game_Player.instancia.Jogador.position.x)*dir > 0) {
 			if (camera_rev) {
-				transform.position += new Vector3(-dir*Game_Player.game_player.velocidade_camera_parado,0,0);
+				transform.position += new Vector3(-dir*Game_Player.instancia.velocidade_camera_parado,0,0);
 			}
 			
 		}else{
@@ -69,17 +69,17 @@ public class ScrollCamera : MonoBehaviour
 	}
     void Update()
     {
-        if (Game_Player.game_player.Movimento_Atual == null)
+        if (Game_Player.instancia.Movimento_Atual == null)
         {
-            Game_Player.game_player.reniciar();
+            Game_Player.instancia.reniciar();
         }   
-		if (Game_Player.game_player.Movimento_Atual.Tempo_Parado >= Game_Player.game_player.tempo_maximo_parado
+		if (Game_Player.instancia.Movimento_Atual.Tempo_Parado >= Game_Player.instancia.tempo_maximo_parado
 		    ) {
 			ignorar_posicao = true;
 		} else {
 			ignorar_posicao = false;
 		}
-        if (Game_Player.game_player.Suspender_Camera)
+        if (Game_Player.instancia.Suspender_Camera)
         {
             return;
 		}
@@ -87,13 +87,13 @@ public class ScrollCamera : MonoBehaviour
 			movimentar_parado();
 			return;
 		}
-        Transform player = Game_Player.game_player.Jogador;
+        Transform player = Game_Player.instancia.Jogador;
         if (player == null)
         {
             return;
         }
         
-        mover_por_limite(player, Game_Player.game_player.Movimento_Atual.Direita);
+        mover_por_limite(player, Game_Player.instancia.Movimento_Atual.Direita);
 
     }
     private void mover_por_limite(Transform player, bool direita)

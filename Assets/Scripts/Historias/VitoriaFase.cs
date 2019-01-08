@@ -333,7 +333,7 @@ public class VitoriaFase : MonoBehaviour {
     }
     void Adicionar_Resto()
     {
-        Nivel nAntigo = Game_Player.game_player.RetornarNivel(Application.loadedLevel);
+        Nivel nAntigo = Game_Player.instancia.RetornarNivel(Application.loadedLevel);
         Nivel n = new Nivel();
         ConfigurarPontuacao(n);
         VerificarSePassouPontuacaoMaxima(nAntigo, n);
@@ -355,18 +355,18 @@ public class VitoriaFase : MonoBehaviour {
     private static void VerificarConquistas(Nivel n)
     {
 
-        Game_Conquistas.instancia.PassarDeFase(Game_Player.game_player.RetornarIndiceFase(Application.loadedLevel));
+        Game_Conquistas.instancia.PassarDeFase(Game_Player.instancia.RetornarIndiceFase(Application.loadedLevel));
         Game_Conquistas.instancia.VerificarLiberarConquistasMoedas(n.Numero_Moedas);
         
     }
 
     private static void InserirHistorias()
     {   
-            Game_Player.game_player.historias[Application.loadedLevel] = true;
-            if (Game_Temp.instancia.HistoriasFases[Game_Player.game_player.RetornarIndiceFase(Application.loadedLevel)] != 0)
+            Game_Player.instancia.historias[Application.loadedLevel] = true;
+            if (Game_Temp.instancia.HistoriasFases[Game_Player.instancia.RetornarIndiceFase(Application.loadedLevel)] != 0)
             {
                 Game_Temp.instancia.TrocarFase = true;
-                Game_Temp.instancia.FaseTroca = Game_Temp.instancia.HistoriasFases[Game_Player.game_player.RetornarIndiceFase(Application.loadedLevel)];
+                Game_Temp.instancia.FaseTroca = Game_Temp.instancia.HistoriasFases[Game_Player.instancia.RetornarIndiceFase(Application.loadedLevel)];
 
             }
 
@@ -377,14 +377,14 @@ public class VitoriaFase : MonoBehaviour {
     private static void InformacoesDeCarregando()
     {
 
-        Game_Player.game_player.FinalizarNivel(Application.loadedLevel);
-        Game_Player.game_player.UltimoNivel = Application.loadedLevel;
-        Game_Player.game_player.EnviarInfoNivel = true;
+        Game_Player.instancia.FinalizarNivel(Application.loadedLevel);
+        Game_Player.instancia.UltimoNivel = Application.loadedLevel;
+        Game_Player.instancia.EnviarInfoNivel = true;
     }
 
     private static void ConfigurarQuizz()
     {
-        int indice = Game_Player.game_player.RetornarIndiceFase(Application.loadedLevel);
+        int indice = Game_Player.instancia.RetornarIndiceFase(Application.loadedLevel);
         if (!Game_Quizz.instancia.NivelQuizz[indice].Liberado)
         {
             Game_Quizz.instancia.NivelQuizz[indice].Liberado = true;
@@ -395,17 +395,17 @@ public class VitoriaFase : MonoBehaviour {
     {
         if (n.Pontuacao >= nAntigo.Pontuacao)
         {
-            Game_Player.game_player.AdicionarNivel(Application.loadedLevel, n);
+            Game_Player.instancia.AdicionarNivel(Application.loadedLevel, n);
         }
     }
 
     private void ConfigurarPontuacao(Nivel n)
     {
-        n.Numero_Vidas = Game_Player.game_player.VidasTotais;
-        n.Numero_Moedas = Game_Player.game_player.Moedas;
+        n.Numero_Vidas = Game_Player.instancia.VidasTotais;
+        n.Numero_Moedas = Game_Player.instancia.Moedas;
         n.TempoRestante = FindObjectOfType<HudTempo>().TempoRestante();
-        n.Numero_Itens = Game_Player.game_player.QuantidadeItemFase;
-        n.Numero_Inimigos = Game_Player.game_player.QuantidadeInimigosFase;
+        n.Numero_Itens = Game_Player.instancia.QuantidadeItemFase;
+        n.Numero_Inimigos = Game_Player.instancia.QuantidadeInimigosFase;
         pontos = n.Numero_Vidas * multiplicador_vidas + n.Numero_Moedas * multiplicador_engrenagens +
             n.Numero_Inimigos * multiplicador_inimigos_derrotados + n.Numero_Itens * multiplicador_itens_coletados
             + (int)Math.Round(n.TempoRestante * multiplicador_tempo_restante);

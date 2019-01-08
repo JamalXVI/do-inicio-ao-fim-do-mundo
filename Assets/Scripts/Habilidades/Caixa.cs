@@ -54,14 +54,14 @@ public class Caixa : MonoBehaviour {
 
     private void ColisaoPrimitivo(Collision2D col)
     {
-        if (col.gameObject.Equals(Game_Player.game_player.Jogador.gameObject))
+        if (col.gameObject.Equals(Game_Player.instancia.Jogador.gameObject))
         {
             if (VerificarColisao(col))
             {
-                Game_Player.game_player.AtivarHabilidades("Levantar");
+                Game_Player.instancia.AtivarHabilidades("Levantar");
                 float total = distancia_caixa.x + this.GetComponent<BoxCollider2D>().size.x;
                 float totaly = distancia_caixa.y + this.GetComponent<BoxCollider2D>().size.y;
-                gerenciador.IniciarHabilidade(Game_Player.game_player.Jogador, this.transform, new Vector2(total,
+                gerenciador.IniciarHabilidade(Game_Player.instancia.Jogador, this.transform, new Vector2(total,
                     totaly), true);
             }
             else
@@ -75,16 +75,16 @@ public class Caixa : MonoBehaviour {
 
     private void ColisaoSocolinha(Collision2D col)
     {
-        if (col.gameObject.Equals(Game_Player.game_player.Jogador.gameObject))
+        if (col.gameObject.Equals(Game_Player.instancia.Jogador.gameObject))
         {
             if (VerificarColisao(col))
             {
                 if (!caindo)
                 {
-                    Game_Player.game_player.AtivarHabilidades("Mover");
+                    Game_Player.instancia.AtivarHabilidades("Mover");
                     float total = distancia_caixa.x + this.GetComponent<BoxCollider2D>().size.x;
                     float totaly = distancia_caixa.y + this.GetComponent<BoxCollider2D>().size.y;
-                    gerenciador.IniciarHabilidade(Game_Player.game_player.Jogador, this.transform, new Vector2(total,
+                    gerenciador.IniciarHabilidade(Game_Player.instancia.Jogador, this.transform, new Vector2(total,
                         totaly), true);
                     //Game_Player.game_player.Movimento_Atual.iniciar_habilidades("Mover");
                 }
@@ -157,9 +157,9 @@ public class Caixa : MonoBehaviour {
     private void PararHabilidades()
     {
         //Corrigir o erro da caixa caindo no abismo;
-        if (Game_Player.game_player.Habilidade_Atual != null)
+        if (Game_Player.instancia.Habilidade_Atual != null)
         {
-            Game_Player.game_player.PararHabilidades();
+            Game_Player.instancia.PararHabilidades();
             InanimarPedra(true);
             empurrada = false;
         }

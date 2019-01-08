@@ -107,7 +107,7 @@ public class Enxame : Game_Inimigo {
     }
     void OnTriggerEnter2D(Collider2D colisor)
     {
-        foreach (Transform col in Game_Player.game_player.Jogador)
+        foreach (Transform col in Game_Player.instancia.Jogador)
         {
             if (colisor.gameObject == col.gameObject && vivo)
             {
@@ -118,11 +118,11 @@ public class Enxame : Game_Inimigo {
     }
     private void VerificarMatarJogador()
     {
-        MovementController movimentoAtual = Game_Player.game_player.Movimento_Atual;
+        MovementController movimentoAtual = Game_Player.instancia.Movimento_Atual;
         if (movimentoAtual.vivo && !movimentoAtual.invencivel)
         {
             gerenciador.MatarPersonagem();
-            Game_Player.game_player.MatarJogador();
+            Game_Player.instancia.MatarJogador();
             Game_Conquistas.instancia.SemRepelente();
         }
     }

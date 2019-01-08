@@ -20,14 +20,14 @@ public class Catapulta : MonoBehaviour {
 	}
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (!Game_Player.game_player.gameObject)
+        if (!Game_Player.instancia.gameObject)
         {
             return;
         }
-        if (col.gameObject.Equals(Game_Player.game_player.Jogador.gameObject))
+        if (col.gameObject.Equals(Game_Player.instancia.Jogador.gameObject))
         {
-            pular_jogador(Game_Player.game_player.Jogador.GetComponent<Rigidbody2D>());
-            pular_jogador(Game_Player.game_player.Jogador_S.GetComponent<Rigidbody2D>());
+            pular_jogador(Game_Player.instancia.Jogador.GetComponent<Rigidbody2D>());
+            pular_jogador(Game_Player.instancia.JogadorSecundario.GetComponent<Rigidbody2D>());
            // corpo.AddForceAtPosition(forca_catapulta,
             //    new Vector2(ponto_forca.position.x, ponto_forca.position.y));
 
@@ -35,15 +35,15 @@ public class Catapulta : MonoBehaviour {
     }
     void OnCollisionExit2D(Collision2D col)
     {
-        if (!Game_Player.game_player.gameObject)
+        if (!Game_Player.instancia.gameObject)
         {
             return;
         }
-        if (col.gameObject.Equals(Game_Player.game_player.Jogador.gameObject))
+        if (col.gameObject.Equals(Game_Player.instancia.Jogador.gameObject))
         {
-            MovementController mov = Game_Player.game_player.Jogador_S.GetComponent<MovementController>();
+            MovementController mov = Game_Player.instancia.JogadorSecundario.GetComponent<MovementController>();
             acao_jogador(mov);
-            acao_jogador(Game_Player.game_player.Movimento_Atual);
+            acao_jogador(Game_Player.instancia.Movimento_Atual);
 
         }
                     

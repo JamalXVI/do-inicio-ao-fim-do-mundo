@@ -15,7 +15,7 @@ public class InimigoEscaravelho : Game_Inimigo {
             if (vivojog.vivo && !vivojog.invencivel)
             {
                 gerenciador.MatarPersonagem();
-                Game_Player.game_player.MatarJogador();
+                Game_Player.instancia.MatarJogador();
             }
 
         }

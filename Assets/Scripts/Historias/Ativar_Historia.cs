@@ -24,7 +24,7 @@ public class Ativar_Historia : MonoBehaviour {
             iniciou_vitoria = true;
             Game_Temp.instancia.TerminouFase = true;
             vitoria.SetActive(true);
-            Game_Player.game_player.Parar_Jogador = true;
+            Game_Player.instancia.Parar_Jogador = true;
         }
 
     }

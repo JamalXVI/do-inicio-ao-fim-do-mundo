@@ -14,11 +14,11 @@ public class CoinBar : MonoBehaviour {
     }
     void Update()
     {
-        if (gerenciador.jogo_rodando && moedas_atual != Game_Player.game_player.Moedas)
+        if (gerenciador.jogo_rodando && moedas_atual != Game_Player.instancia.Moedas)
         {
             
-            moedas_atual = Game_Player.game_player.Moedas;
-            float num = ((float)Game_Player.game_player.Moedas);
+            moedas_atual = Game_Player.instancia.Moedas;
+            float num = ((float)Game_Player.instancia.Moedas);
             float dem = ((float)gerenciador.TotalMoedas);
             tempo_porcentual =  num/ dem;
             imagem.fillAmount = tempo_porcentual;

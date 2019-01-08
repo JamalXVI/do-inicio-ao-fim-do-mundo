@@ -54,14 +54,14 @@ public class Selecao_v3 : MonoBehaviour {
     }
     private void VerificarFasesAtivas()
     {
-        for (int i = 0; i < Game_Player.game_player.ordem_fases.Length; i++)
+        for (int i = 0; i < Game_Player.instancia.ordem_fases.Length; i++)
         {
             int valor = i == 0 ? 0 : i - 1; 
-            if (Game_Player.game_player.VerificarSePassouFase(valor) || i == 0)
+            if (Game_Player.instancia.VerificarSePassouFase(valor) || i == 0)
             {
                 try
                 {
-                    Nivel nivelEsc = Game_Player.game_player.RetornarNivel(Game_Player.game_player.ordem_fases[valor]);
+                    Nivel nivelEsc = Game_Player.instancia.RetornarNivel(Game_Player.instancia.ordem_fases[valor]);
                     if (pontuacaoMaxima[valor] != 0)
                     {
                         float num = 100 * nivelEsc.Pontuacao / pontuacaoMaxima[valor];
@@ -190,7 +190,7 @@ public class Selecao_v3 : MonoBehaviour {
         string nome = (i + 1) < 10 ? "0" + (i + 1).ToString() : (i + 1).ToString();
         var filtro = from f in fases where f.name.Contains(nome) select f;
         fases_ativas.Add(filtro.First<GameObject>());
-        Nivel nivel = Game_Player.game_player.RetornarNivel(Game_Player.game_player.ordem_fases[i]);
+        Nivel nivel = Game_Player.instancia.RetornarNivel(Game_Player.instancia.ordem_fases[i]);
         int j = (i+1) % 3 == 0 ? 3 : (i+1) % 3;
         int k = Convert.ToInt32(Convert.ToDouble((i) / 3));
         var descricaoFases = from d in descricao_fases where d.name.Contains((k+1).ToString() + "-" + (j).ToString()) select d;
@@ -249,12 +249,12 @@ public class Selecao_v3 : MonoBehaviour {
     public void IniciarFase()
     {
         int i = int.Parse(estagioSelecionado.name);
-        int nivel = Game_Player.game_player.ordem_fases[(i - 1)];
+        int nivel = Game_Player.instancia.ordem_fases[(i - 1)];
         MudarDeCena(nivel);
     }
     public void IrParaConquistas()
     {
-        MudarDeCena(Game_Player.game_player.faseConquista);
+        MudarDeCena(Game_Player.instancia.faseConquista);
     }
     private void MudarDeCena(int nivel)
     {

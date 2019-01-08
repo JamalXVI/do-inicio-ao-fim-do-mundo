@@ -90,7 +90,7 @@ public class CheckPoint : MonoBehaviour {
             if (!tocouSomCheck)
             {
                 VerificarLevantandoPrimitivo();  
-             Game_Player.game_player.resetar_jogador();
+             Game_Player.instancia.resetar_jogador();
              SoundManager.instance.PlaySingle(somPassar);
              tocouSomCheck = true;
             }
@@ -100,13 +100,13 @@ public class CheckPoint : MonoBehaviour {
 
     private static void VerificarLevantandoPrimitivo()
     {
-        if (Game_Player.game_player.Jogador_S == null)
+        if (Game_Player.instancia.JogadorSecundario == null)
         {
             return;
         }
-        if (Game_Player.game_player.Jogador_S.name.Contains("Primitivo"))
+        if (Game_Player.instancia.JogadorSecundario.name.Contains("Primitivo"))
         {
-            Game_Player.game_player.Jogador_S.GetComponent<MovementController>().VerSeTaLevantandoPedra();
+            Game_Player.instancia.JogadorSecundario.GetComponent<MovementController>().VerSeTaLevantandoPedra();
         }
     }
     private void colorirSeta()

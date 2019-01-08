@@ -10,13 +10,13 @@ public class Animar_HUD : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Game_Player.game_player.Jogador == null)
+        if (Game_Player.instancia.Jogador == null)
         {
             return;
         }
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"+Game_Player.game_player.Jogador.name))
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"+Game_Player.instancia.Jogador.name))
         {
-            anim.SetBool(Game_Player.game_player.Jogador.name, true);
+            anim.SetBool(Game_Player.instancia.Jogador.name, true);
         }
         else
         {

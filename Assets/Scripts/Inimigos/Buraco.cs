@@ -14,7 +14,7 @@ public class Buraco : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D colisor)
 	{
 		if (colisor.gameObject.tag.Contains("Colider")) {
-			Game_Player.game_player.Buraco = true;
+			Game_Player.instancia.Buraco = true;
 		}
 	}
     void OnTriggerExit2D(Collider2D colisor)

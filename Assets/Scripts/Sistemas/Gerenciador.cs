@@ -70,22 +70,22 @@ public class Gerenciador : MonoBehaviour
     void Awake()
     {
         pegouFrutas = new bool[5];
-        if (Game_Player.game_player.Jogador == null)
+        if (Game_Player.instancia.Jogador == null)
         {
-            Game_Player.game_player.PegarJogador();
+            Game_Player.instancia.PegarJogador();
         }
         //Game_Player.game_player.reniciar();
         moedas = GameObject.FindGameObjectsWithTag("Coin");
         total_moedas = moedas.Length;
         jogo_rodando = true;
         checkpoints = GameObject.FindObjectsOfType<CheckPoint>();
-        Nivel ni = Game_Player.game_player.RetornarNivel(Application.loadedLevel);
+        Nivel ni = Game_Player.instancia.RetornarNivel(Application.loadedLevel);
         if (ni == null)
         {
             ni = new Nivel();
         }
-        Game_Player.game_player.AdicionarNivel(Application.loadedLevel, ni);
-        Game_Player.game_player.Iniciou_fase = true;
+        Game_Player.instancia.AdicionarNivel(Application.loadedLevel, ni);
+        Game_Player.instancia.Iniciou_fase = true;
         jaAdicionouVidaFrutas = false;
         
     }
@@ -101,13 +101,13 @@ public class Gerenciador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Game_Player.game_player.Jogador == null)
+        if (Game_Player.instancia.Jogador == null)
         {
-            Game_Player.game_player.PegarJogador();
+            Game_Player.instancia.PegarJogador();
         }
-        if (Game_Player.game_player != null && !reiniciar)
+        if (Game_Player.instancia != null && !reiniciar)
         {
-            Game_Player.game_player.reniciar();
+            Game_Player.instancia.reniciar();
             reiniciar = !reiniciar;
         }
         VerificarFrutasMaxima();
@@ -121,12 +121,12 @@ public class Gerenciador : MonoBehaviour
             return;
         }
         jaAdicionouVidaFrutas = true;
-        Game_Player.game_player.Vidas_Extras++;
+        Game_Player.instancia.Vidas_Extras++;
         Game_Conquistas.instancia.ConquistaTodasAsFrutas();
     }
     public void LimparHabilidades()
     {
-        if ((comecou_habilidade) && !Game_Player.game_player.Em_Habilidade)
+        if ((comecou_habilidade) && !Game_Player.instancia.Em_Habilidade)
         {
             bool condicao_mov_esq = (jogador_momento.transform.position.x < corpo_habilidade.transform.position.x - 4.0f &&
                 !jogador_momento.GetComponent<MovementController>().Direita && habilidade_em_x);
@@ -134,7 +134,7 @@ public class Gerenciador : MonoBehaviour
                 jogador_momento.GetComponent<MovementController>().Direita && habilidade_em_x);
             if (Mathf.Abs(corpo_habilidade.transform.position.x - jogador_momento.transform.position.x) >= distancia_cancelar_habilidade.x ||
                 Mathf.Abs(corpo_habilidade.transform.position.y - jogador_momento.transform.position.y) >= distancia_cancelar_habilidade.y ||
-                jogador_momento != Game_Player.game_player.Jogador || !Game_Player.game_player.Movimento_Atual.grounded ||
+                jogador_momento != Game_Player.instancia.Jogador || !Game_Player.instancia.Movimento_Atual.grounded ||
                  condicao_mov_esq || condicao_mov_dir)
                 
             {
@@ -152,10 +152,10 @@ public class Gerenciador : MonoBehaviour
     }
     public void PararHabilidade()
    {
-       if (!Game_Player.game_player.Em_Habilidade)
+       if (!Game_Player.instancia.Em_Habilidade)
        {
        comecou_habilidade = false;
-       Game_Player.game_player.LimparHabilidades();
+       Game_Player.instancia.LimparHabilidades();
            
        }
    }
@@ -183,11 +183,11 @@ public class Gerenciador : MonoBehaviour
     public void ReiniciarJogo()
     {
         CheckPoint ckbesc = null;
-        Game_Player.game_player.reiniciar_jogadores();
-        Transform jogador = Game_Player.game_player.Jogador;
-		Game_Player.game_player.Buraco = false;
+        Game_Player.instancia.reiniciar_jogadores();
+        Transform jogador = Game_Player.instancia.Jogador;
+		Game_Player.instancia.Buraco = false;
 
-        if ((Game_Player.game_player.VidasTotais) > 0)
+        if ((Game_Player.instancia.VidasTotais) > 0)
         {
             int ultimo = -1;
             foreach (CheckPoint ckb in checkpoints)
@@ -202,34 +202,34 @@ public class Gerenciador : MonoBehaviour
         }
         else
         {
-            Game_Player.game_player.Jogador = null;
+            Game_Player.instancia.Jogador = null;
             checkpoints = null;
-            Game_Player.game_player.Nivel_Game_Over = Application.loadedLevel;
-            Application.LoadLevel(Game_Player.game_player.game_over);
-            Game_Player.game_player.ZerarVariaveis();
+            Game_Player.instancia.Nivel_Game_Over = Application.loadedLevel;
+            Application.LoadLevel(Game_Player.instancia.game_over);
+            Game_Player.instancia.ZerarVariaveis();
             return;
 
         }
-        if (Game_Player.game_player.Jogador == null)
+        if (Game_Player.instancia.Jogador == null)
         {
             return;
         }
         posicao = new Vector3(ckbesc.retornar_posicoes().x, ckbesc.retornar_posicoes().y, jogador.position.z);
-        Game_Player.game_player.ReiniciarPosicoesJogadores(posicao);
-        Game_Player.game_player.Vidas_Extras--;
+        Game_Player.instancia.ReiniciarPosicoesJogadores(posicao);
+        Game_Player.instancia.Vidas_Extras--;
         jogador.GetComponent<MovementController>().DeixarInvencivel();
     }
     public void adicionar_moeda(int quantidade)
     {
-        Game_Player.game_player.Moedas += quantidade;
-        if (Game_Player.game_player.Moedas >= total_moedas)
+        Game_Player.instancia.Moedas += quantidade;
+        if (Game_Player.instancia.Moedas >= total_moedas)
         {
-            Game_Player.game_player.Vidas_Extras++;
+            Game_Player.instancia.Vidas_Extras++;
         }
     }
     public void MatarPersonagem()
     {
-        Transform jogador = Game_Player.game_player.Jogador;   
+        Transform jogador = Game_Player.instancia.Jogador;   
 
         jogador.GetComponent<MovementController>().SetAllCollidersStatus(false);
         jogador.GetComponent<MovementController>().vivo = false;

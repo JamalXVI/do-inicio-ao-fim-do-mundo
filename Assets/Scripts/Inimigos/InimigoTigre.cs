@@ -205,7 +205,7 @@ public class InimigoTigre : Game_Inimigo
             if (vivojog.vivo && !vivojog.invencivel)
             {
                 gerenciador.MatarPersonagem();
-                Game_Player.game_player.MatarJogador();
+                Game_Player.instancia.MatarJogador();
                 Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), colisor.collider);
             }
 
@@ -233,7 +233,7 @@ public class InimigoTigre : Game_Inimigo
             ja_atacou = false;
             esperar_reatacar = false;
             parar_tudo = true;
-            Duracao_Paralisado = Game_Player.game_player.socolinha.duracao_paralisado;
+            Duracao_Paralisado = Game_Player.instancia.socolinha.duracao_paralisado;
             return;
         }
         if (colisor.gameObject.tag.StartsWith("ColiderP") && vivo && !anim.GetBool("Attack") && !anim.GetBool("Attacking"))
@@ -243,7 +243,7 @@ public class InimigoTigre : Game_Inimigo
             {
                 parar_tudo = false;
                 Destruir();
-                Game_Player.game_player.Jogador.gameObject.GetComponent<Rigidbody2D>().AddForce(impluso_no_pulo);
+                Game_Player.instancia.Jogador.gameObject.GetComponent<Rigidbody2D>().AddForce(impluso_no_pulo);
             }
         }
     }

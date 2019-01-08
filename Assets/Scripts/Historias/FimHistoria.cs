@@ -13,14 +13,14 @@ public class FimHistoria : MonoBehaviour {
     private void MudarDeCena(int nivel)
     {
         Game_Temp.instancia.TrocarFase = true;
-        if (Game_Player.game_player.JaFoiPerguntado)
+        if (Game_Player.instancia.JaFoiPerguntado)
         {
              Game_Temp.instancia.FaseTroca = nivel;
 
         }
         else
         {
-            Game_Player.game_player.JaFoiPerguntado = true;
+            Game_Player.instancia.JaFoiPerguntado = true;
             Game_Temp.instancia.FaseTroca = Game_Temp.instancia.NivelPerguntas;
         }
         Game_Loja.instancia.itemsDaLoja[idHistoriaLoja].Liberado = true;
@@ -28,7 +28,7 @@ public class FimHistoria : MonoBehaviour {
         if (!naoEhHistoria)
         {
             Game_Temp.instancia.EhHistoria = true;
-            Game_Player.game_player.EnviarInfoNivel = true;
+            Game_Player.instancia.EnviarInfoNivel = true;
 
         }
         else

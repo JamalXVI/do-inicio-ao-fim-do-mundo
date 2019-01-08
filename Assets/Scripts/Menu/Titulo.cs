@@ -12,7 +12,7 @@ public class Titulo : MonoBehaviour {
                 return;
             }
             apertouCarregar = true;
-            if (Game_Player.game_player.Carregar())
+            if (Game_Player.instancia.Carregar())
             {
                 CarregarFase(1);
             }
@@ -36,8 +36,8 @@ public class Titulo : MonoBehaviour {
     }
     void Awake()
     {
-        Game_Player.game_player.socolinha.Ativo = true;
-        Game_Player.game_player.primitivo.Ativo = true;
+        Game_Player.instancia.socolinha.Ativo = true;
+        Game_Player.instancia.primitivo.Ativo = true;
 
     }
     public void Creditos()
@@ -46,7 +46,7 @@ public class Titulo : MonoBehaviour {
     }
     void Update()
     {
-        if (Input.GetAxis("Submit") > 0 || Input.GetKey(Game_Player.game_player.Teclas["habilidade"]))
+        if (Input.GetAxis("Submit") > 0 || Input.GetKey(Game_Player.instancia.Teclas["habilidade"]))
         {
             NewGame();
         }

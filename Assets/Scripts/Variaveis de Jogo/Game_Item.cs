@@ -47,7 +47,7 @@ public class Game_Item : MonoBehaviour
     }
     protected virtual void AdicionarItem()
     {
-        Game_Player.game_player.quantidade_item[id] += 1;
-        Game_Player.game_player.QuantidadeItemFase++;
+        Game_Player.instancia.quantidade_item[id] += 1;
+        Game_Player.instancia.QuantidadeItemFase++;
     }
 }

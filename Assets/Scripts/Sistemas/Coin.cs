@@ -24,9 +24,9 @@ public class Coin : MonoBehaviour
     }
     void Adicionar_Moedas()
     {
-        Nivel n = Game_Player.game_player.RetornarNivel(Application.loadedLevel);
+        Nivel n = Game_Player.instancia.RetornarNivel(Application.loadedLevel);
         
         n.Numero_Moedas++;
-        Game_Player.game_player.AdicionarNivel(Application.loadedLevel, n);
+        Game_Player.instancia.AdicionarNivel(Application.loadedLevel, n);
     }
 }

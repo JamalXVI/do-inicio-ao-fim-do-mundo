@@ -21,14 +21,14 @@ public class CanvasPausar : MonoBehaviour {
     private void Zerar_Valores()
     {
         gerenciador.Pausar_Jogo = false;
-        Game_Player.game_player.Moedas = 0;
-        Game_Player.game_player.QuantidadeItemFase = 0;
-        Game_Player.game_player.QuantidadeInimigosFase = 0;
+        Game_Player.instancia.Moedas = 0;
+        Game_Player.instancia.QuantidadeItemFase = 0;
+        Game_Player.instancia.QuantidadeInimigosFase = 0;
     }
     public void SelecaoFases()
     {
         Zerar_Valores();
-        Application.LoadLevel(Game_Player.game_player.troca_fases);
+        Application.LoadLevel(Game_Player.instancia.troca_fases);
     }
     public void Sair()
     {

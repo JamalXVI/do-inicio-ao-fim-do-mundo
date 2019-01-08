@@ -20,13 +20,13 @@ public class HabilidadeHUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Game_Player.game_player.Habilidade_Atual != null)
+        if (Game_Player.instancia.Habilidade_Atual != null)
         {
-            if (!Game_Player.game_player.Habilidade_Atual.nome.Equals(""))
+            if (!Game_Player.instancia.Habilidade_Atual.nome.Equals(""))
             {
-                if (!nome_antigo.Equals(Game_Player.game_player.Habilidade_Atual.nome))
+                if (!nome_antigo.Equals(Game_Player.instancia.Habilidade_Atual.nome))
                 {
-                    nome_antigo = Game_Player.game_player.Habilidade_Atual.nome;
+                    nome_antigo = Game_Player.instancia.Habilidade_Atual.nome;
                     transicao = true;
                 }
             }

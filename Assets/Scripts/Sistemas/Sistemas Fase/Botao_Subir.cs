@@ -17,7 +17,7 @@ public class Botao_Subir : MonoBehaviour {
     {
         
         float distancia = transform.position.y + GetComponent<Collider2D>().bounds.size.y;
-        if (col.gameObject.Equals(Game_Player.game_player.Jogador.gameObject)
+        if (col.gameObject.Equals(Game_Player.instancia.Jogador.gameObject)
             )
         {
             float tamanho = 0;

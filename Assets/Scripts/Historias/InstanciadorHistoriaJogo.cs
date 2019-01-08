@@ -22,7 +22,7 @@ public class InstanciadorHistoriaJogo : MonoBehaviour {
         {
             paiHistoria.SetActive(true);
             historia.Iniciar(textoAMostrar);
-            Game_Player.game_player.FalasNoJogo[id] = true;
+            Game_Player.instancia.FalasNoJogo[id] = true;
             Destroy(this);
         }
     }

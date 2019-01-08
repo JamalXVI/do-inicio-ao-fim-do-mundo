@@ -12,7 +12,7 @@ public class BulletBillCabeca : MonoBehaviour
             MovementController vivojog = colisor.gameObject.GetComponentInParent<MovementController>();
             if (vivojog.vivo)
             {
-                Game_Player.game_player.Jogador.gameObject.GetComponent<Rigidbody2D>().AddForce(impulso_forca_pulo);
+                Game_Player.instancia.Jogador.gameObject.GetComponent<Rigidbody2D>().AddForce(impulso_forca_pulo);
             }
         }
     }

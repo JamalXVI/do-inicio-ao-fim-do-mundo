@@ -9,7 +9,7 @@ public class Game_Input : Game_Base {
             DontDestroyOnLoad(gameObject);
             game_input = this;
         }
-        else if (Game_Player.game_player != this)
+        else if (Game_Player.instancia != this)
         {
 
             Destroy(gameObject);
@@ -233,7 +233,7 @@ public class Game_Input : Game_Base {
     }
     public static void TranscreverControles()
     {
-        Dictionary<string, KeyCode> t = ClonarLista(Game_Player.game_player.Teclas);
+        Dictionary<string, KeyCode> t = ClonarLista(Game_Player.instancia.Teclas);
         /*
           Dictionary<string, string> v = new Dictionary<string, string>();
          foreach (var tecla in t)

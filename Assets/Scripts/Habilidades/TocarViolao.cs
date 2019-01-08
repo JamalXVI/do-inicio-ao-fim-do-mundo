@@ -65,10 +65,10 @@ public class TocarViolao : MonoBehaviour
 
     private void IniciarHabilidade(string habilidade)
     {
-        Game_Player.game_player.AtivarHabilidades(habilidade);
+        Game_Player.instancia.AtivarHabilidades(habilidade);
         float total = distancia_cancelar.x + this.GetComponent<BoxCollider2D>().size.x;
         float totaly = distancia_cancelar.y + this.GetComponent<BoxCollider2D>().size.y;
-        gerenciador.IniciarHabilidade(Game_Player.game_player.Jogador, this.transform, new Vector2(total,
+        gerenciador.IniciarHabilidade(Game_Player.instancia.Jogador, this.transform, new Vector2(total,
             totaly), false);
        // tocou = true;
     }
@@ -78,7 +78,7 @@ public class TocarViolao : MonoBehaviour
         MovementController mov = col.GetComponentInParent<MovementController>();
         if (mov != null)
         {
-            if (mov.gameObject.Equals(Game_Player.game_player.Jogador.gameObject) && mov.gameObject.name.Contains(personagem))
+            if (mov.gameObject.Equals(Game_Player.instancia.Jogador.gameObject) && mov.gameObject.name.Contains(personagem))
             {
                 return true;
             }

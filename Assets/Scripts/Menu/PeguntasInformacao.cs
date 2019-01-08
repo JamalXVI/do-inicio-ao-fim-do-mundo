@@ -41,7 +41,7 @@ public class PeguntasInformacao : MonoBehaviour {
 
     private void AcionarSegundoCanvas()
     {
-        Game_Player.game_player.FornecerInformacoes = true;
+        Game_Player.instancia.FornecerInformacoes = true;
         Thread t = new Thread(SalvarJogador);
         t.Start();
         canvasAviso.SetActive(false);
@@ -49,7 +49,7 @@ public class PeguntasInformacao : MonoBehaviour {
     }
     public void ColetarDados()
     {
-        if (!Game_Player.game_player.FornecerInformacoes)
+        if (!Game_Player.instancia.FornecerInformacoes)
         {
             return;
         }
@@ -74,14 +74,14 @@ public class PeguntasInformacao : MonoBehaviour {
         form.AddField("idade", idade.text);
         WWW request = new WWW(ConstantesDoSistema.Endereco + "index.php", form);
         StartCoroutine(EsperarResposta(request));
-        CarregarFase(Game_Player.game_player.troca_fases);
+        CarregarFase(Game_Player.instancia.troca_fases);
     }
     public void Negar()
     {
-        Game_Player.game_player.FornecerInformacoes = false;
-        Game_Player.game_player.Salvar(ConstantesDoSistema.Caminho);
+        Game_Player.instancia.FornecerInformacoes = false;
+        Game_Player.instancia.Salvar(ConstantesDoSistema.Caminho);
         canvasAviso.SetActive(false);
-        CarregarFase(Game_Player.game_player.troca_fases);
+        CarregarFase(Game_Player.instancia.troca_fases);
     }
     private void CarregarFase(int i)
     {
@@ -98,12 +98,12 @@ public class PeguntasInformacao : MonoBehaviour {
         // check for errors
         if (www.error == null)
         {
-            Game_Player.game_player.EnviarInfoNivel = false;
+            Game_Player.instancia.EnviarInfoNivel = false;
             Debug.Log("WWW Ok!: " + www.text);
         }
         else
         {
-            Game_Player.game_player.EnviarInfoNivel = false;
+            Game_Player.instancia.EnviarInfoNivel = false;
             Debug.Log("WWW Error: " + www.error);
 
         }
@@ -111,7 +111,7 @@ public class PeguntasInformacao : MonoBehaviour {
     #region Threads
     private void SalvarJogador()
     {
-        Game_Player.game_player.Salvar(ConstantesDoSistema.Caminho);
+        Game_Player.instancia.Salvar(ConstantesDoSistema.Caminho);
         
     }
     #endregion

@@ -24,14 +24,14 @@ public class TransicaoCanvas : MonoBehaviour {
         {
             if (!Game_Temp.instancia.EhHistoria)
             {
-                Game_Player.game_player.UltimoNivel = Application.loadedLevel;
+                Game_Player.instancia.UltimoNivel = Application.loadedLevel;
 
             }
             else
             {
                 Game_Temp.instancia.EhHistoria = false;
             }
-            Application.LoadLevel(Game_Player.game_player.carregando);
+            Application.LoadLevel(Game_Player.instancia.carregando);
 
         }
 	

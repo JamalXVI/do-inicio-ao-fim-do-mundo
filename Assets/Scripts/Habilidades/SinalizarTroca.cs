@@ -53,7 +53,7 @@ public class SinalizarTroca : MonoBehaviour {
     }
     private bool VerificarSocolinha()
     {
-        if (Game_Player.game_player.Jogador.name.Contains("Socolinha") && socolinha)
+        if (Game_Player.instancia.Jogador.name.Contains("Socolinha") && socolinha)
         {
             return true;
         }
@@ -61,7 +61,7 @@ public class SinalizarTroca : MonoBehaviour {
     }
     private bool VerificarPrimitivo()
     {
-        if (Game_Player.game_player.Jogador.name.Contains("Primitivo") && primitivo)
+        if (Game_Player.instancia.Jogador.name.Contains("Primitivo") && primitivo)
         {
             return true;
         }
@@ -70,7 +70,7 @@ public class SinalizarTroca : MonoBehaviour {
     
     private bool VerificarJogador(GameObject objeto)
     {
-        if (objeto == Game_Player.game_player.Jogador || objeto.transform.IsChildOf(Game_Player.game_player.Jogador.transform))
+        if (objeto == Game_Player.instancia.Jogador || objeto.transform.IsChildOf(Game_Player.instancia.Jogador.transform))
         {
             return true;
         }

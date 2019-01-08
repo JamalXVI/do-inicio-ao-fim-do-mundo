@@ -20,7 +20,7 @@ public class PularESubir : MonoBehaviour
     void OnTriggerEnter2D(Collider2D colisor)
     {
 
-        if (colisor.gameObject == Game_Player.game_player.Jogador)
+        if (colisor.gameObject == Game_Player.instancia.Jogador)
         {
             passando = true;
             jogadorpassou = true;
@@ -30,7 +30,7 @@ public class PularESubir : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D colisor)
     {
-        if (colisor.gameObject == Game_Player.game_player.Jogador)
+        if (colisor.gameObject == Game_Player.instancia.Jogador)
         {
             passando = false;
         }

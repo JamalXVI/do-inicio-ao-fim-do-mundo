@@ -225,9 +225,9 @@ public class Loja : MonoBehaviour {
     }
     public void ComprarItem(ItemLoja item, int i)
     {
-        if (Game_Player.game_player.Moedas_Jogo >= item.Preco)
+        if (Game_Player.instancia.Moedas_Jogo >= item.Preco)
         {
-            Game_Player.game_player.MoedasGastas += item.Preco;
+            Game_Player.instancia.MoedasGastas += item.Preco;
             item.Comprado = true;
             SoundManager.instance.PlaySingle(somComprar);
             PreencherPainel(i, item);
@@ -295,7 +295,7 @@ public class Loja : MonoBehaviour {
         }
         else
         {
-            CarregarFase(Game_Player.game_player.troca_fases);
+            CarregarFase(Game_Player.instancia.troca_fases);
         }
     }
     private void CarregarFase(int i)

@@ -7,20 +7,20 @@ public class Game_Over : MonoBehaviour {
     {
         ZerarValores();
 
-        Application.LoadLevel(Game_Player.game_player.Nivel_Game_Over);
+        Application.LoadLevel(Game_Player.instancia.Nivel_Game_Over);
 
     }
     public void sair()
     {
         ZerarValores();
-        Application.LoadLevel(Game_Player.game_player.troca_fases);
+        Application.LoadLevel(Game_Player.instancia.troca_fases);
     }
 
     private static void ZerarValores()
     {
 
-        Game_Player.game_player.Moedas = 0;
-        Game_Player.game_player.QuantidadeItemFase = 0;
-        Game_Player.game_player.QuantidadeInimigosFase = 0;
+        Game_Player.instancia.Moedas = 0;
+        Game_Player.instancia.QuantidadeItemFase = 0;
+        Game_Player.instancia.QuantidadeInimigosFase = 0;
     }
 }

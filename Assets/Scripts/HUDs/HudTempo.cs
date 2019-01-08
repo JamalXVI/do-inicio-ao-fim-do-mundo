@@ -33,7 +33,7 @@ public class HudTempo : MonoBehaviour {
         }
         else
         {
-            Game_Player.game_player.Vidas_Extras = -1000;
+            Game_Player.instancia.Vidas_Extras = -1000;
             Game_Conquistas.instancia.AdicionarPerdaTempo();
             gerenciador.ReiniciarJogo();
         }
